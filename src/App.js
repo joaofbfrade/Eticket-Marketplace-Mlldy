@@ -9,15 +9,23 @@ import { MoralisProvider } from "react-moralis";
 function App() {
   return (
     <div className="App">
-          <Navbar bg="light" variant="light">
-       
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+          <Navbar bg="dark" variant="dark">
+          <Navbar.Brand href="#home">
+            <img
+              src="https://mellody.art/wp-content/uploads/2022/05/Logo-Branco-Mellody-1-e1652910561504.png"
+              width="100"
+              height="30"
+              className="d-inline-block align-top"
+              alt=""
+            />
+          </Navbar.Brand>
           <Nav className="me-auto">
+          <Nav.Link href="#pricing">Cart</Nav.Link>
             
-            
-           <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+           <Nav.Link href="#features">Marketplace</Nav.Link>
+            <Nav.Link href="#features">Contests</Nav.Link>
+            <Nav.Link href="#pricing">Account</Nav.Link>
+            <Nav.Link href="#pricing">Cart</Nav.Link>
           </Nav>
           <ConnectButton />
       </Navbar>
