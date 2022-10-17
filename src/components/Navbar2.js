@@ -66,12 +66,8 @@ function Navbar2() {
                   
                 </Form>
                 <Nav.Link href="#features">Marketplace</Nav.Link>
-                <Nav.Link href="/contests" target="_blank">Contests</Nav.Link>
-                <ConnectButton
-                  bgColor="black"
-                  color="black"
-                  fontWeigth="800"
-                />
+                <Nav.Link href="/contests">Contests</Nav.Link>
+                <ConnectButton  />
               </Nav>
 
             </Offcanvas.Body>

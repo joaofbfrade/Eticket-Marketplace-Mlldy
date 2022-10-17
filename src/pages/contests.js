@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { MoralisProvider } from "react-moralis";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
