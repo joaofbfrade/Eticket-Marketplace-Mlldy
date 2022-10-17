@@ -25,7 +25,7 @@ function Navbar1() {
           </Navbar.Brand>
           
           <Nav className="mx-auto">
-          <Nav.Link href="#pricing">Cart</Nav.Link>
+          
             
            <Nav.Link href="#features">Marketplace</Nav.Link>
             <Nav.Link href="#features">Contests</Nav.Link>
