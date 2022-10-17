@@ -4,12 +4,20 @@
 .iVxBbz /*Button Background*/
 {
     background: rgb(241, 241, 241)!important;
+    padding-left: 0;
 }
 
 
 .hULrqk /*Button Text*/
 {
     color: rgb(34, 34, 34)!important;
+    
+    
+}
+
+#butao
+{
+    margin-left: -20px;
 }
 
 .nav-link

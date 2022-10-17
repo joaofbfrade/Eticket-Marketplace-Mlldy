@@ -56,7 +56,7 @@ function Navbar2() {
             <Offcanvas.Body>
 
               <Nav className="justify-content-end flex-grow-1 pe-3 ">
-                <Form className="d-flex ">
+                <Form className="d-flex  ">
                   <Form.Control
                     type="search"
                     placeholder="Search"
@@ -67,8 +67,13 @@ function Navbar2() {
                 </Form>
                 <Nav.Link href="#features">Marketplace</Nav.Link>
                 <Nav.Link href="/contests">Contests</Nav.Link>
-                <ConnectButton  />
+               
+                
               </Nav>
+
+              <div id= "butao">
+               <ConnectButton  />
+               </div>
 
             </Offcanvas.Body>
           </Navbar.Offcanvas>
