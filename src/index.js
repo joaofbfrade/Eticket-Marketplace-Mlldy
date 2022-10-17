@@ -1,18 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
 import { MoralisProvider } from "react-moralis";
-
-
+import './index.css'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+import Navbar1 from './components/Navbar1';
+import Footer from './components/Footer';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
       <MoralisProvider appId="wlzRrvHDWBuWvZhmBD1zIelwKOuIHHqppirPd3VA" serverUrl="https://s2ni7eolynpx.usemoralis.com:2053/server">
 
-    <App />
+    <Navbar1 />
+    <Footer />
     </MoralisProvider>,
   </React.StrictMode>
 );
