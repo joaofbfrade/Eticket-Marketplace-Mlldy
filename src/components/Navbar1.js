@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-import './App.css';
+
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { CryptoCards, Button } from '@web3uikit/core';
@@ -11,7 +10,7 @@ const imgstyle = {
   'padding-left': 20,
 };
 
-function App() {
+function Navbar1() {
   return (
     <div className="App">
           <Navbar classname="" bg="dark" variant="dark">
@@ -36,10 +35,10 @@ function App() {
           <ConnectButton />
       </Navbar>
     
-
+    
    
     </div>
   );
 }
 
-export default App;
+export default Navbar1;
