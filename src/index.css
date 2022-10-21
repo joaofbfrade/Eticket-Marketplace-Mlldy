@@ -1,3 +1,58 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* Web3 Ui Kit - Connect Button*/
+
+
+
+
+.iVxBbz /*Button Background*/
+{
+    background: rgb(241, 241, 241)!important;
+    padding-left: 0;
+}
+
+
+.hULrqk /*Button Text*/
+{
+    color: rgb(34, 34, 34)!important;
+    
+    
+}
+
+#butao
+{
+    margin-left: -20px;
+}
+
+.nav-link
+{
+    font-weight: 600!important;
+}
+
+
+
+.form-control
+{
+ background-color: #212529!important;
+}
+
+
+element.style{
+    padding-left: 10px;
+
+}
+
+
+#offcanvasNavbar-expand-md{
+
+
+     background-color: #212529; 
+}
+
+#nav{
+
+    color:aliceblue;
+}

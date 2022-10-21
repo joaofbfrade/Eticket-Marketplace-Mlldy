@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Navbar2 from './components/Navbar2';
 import Welcome from './pages/welcome';
 import Contests from './pages/contests';
+import Marketplace from './pages/marketplace';
 
 const App = () => {
     return (
@@ -14,12 +15,15 @@ const App = () => {
             <Router>
             <MoralisProvider appId="wlzRrvHDWBuWvZhmBD1zIelwKOuIHHqppirPd3VA" serverUrl="https://s2ni7eolynpx.usemoralis.com:2053/server"> 
                 <Navbar2 />
-            </MoralisProvider>
+            
                 <Routes>
                     <Route exact path='/' element={<Welcome />} />
-                    <Route path='/contests' element={<Contests/>} />
+                    <Route exact path='/contests' element={<Contests/>} />
+                    <Route exact path='/marketplace' element={<Marketplace/>} />
                 
                 </Routes>
+
+                </MoralisProvider>
             </Router>
         </>
     );
