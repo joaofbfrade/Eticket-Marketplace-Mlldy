@@ -21,7 +21,7 @@ function Navbar2() {
   return (
     <>
 
-      <Navbar key={expand} bg="dark" variant="dark" expand={'md'} className="mb-3">
+      <Navbar key={expand} bg="dark" variant="dark" expand={'md'} >
         <Container fluid>
           <Navbar.Brand href="#home">
             <img style={imgstyle}
