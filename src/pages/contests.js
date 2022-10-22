@@ -7,13 +7,6 @@ import Card from 'react-bootstrap/Card';
 import { useState } from 'react';
 
 
-
-
-
-
-
-
-
 const Contests = () => {
 
 

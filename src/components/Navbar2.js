@@ -66,8 +66,8 @@ function Navbar2() {
 
                 </Form>
 
-                
-                <Nav.Link id="nav" href="/marketplace">Marketplace</Nav.Link>
+                <Nav.Link id="nav" href="/individualcontest">Marketplace</Nav.Link>
+                {/* <Nav.Link id="nav" href="/marketplace">Marketplace</Nav.Link> */}
                 <Nav.Link id="nav" href="/contests">Contests</Nav.Link>
 
 
