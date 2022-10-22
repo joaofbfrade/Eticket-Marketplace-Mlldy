@@ -27,20 +27,20 @@ const Contests = () => {
 
 
   return (
-    <div style={{ "background-color": "#1F1F1F" }} className='min-h-screen p-10 '  >
+    <div style={{ "background-color": "#1F1F1F" }} className='min-h-screen p-1  sm:p-10  '  >
 
 
       {/* FEATURING CARD */}
 
-      <div id="maincard" style={{ "background-color": "#222222" }} className="rounded-2xl grid grid-cols-2 place-content-center ml-10  ">
+      <div  style={{ "background-color": "#222222" }} className="rounded-2xl grid grid-cols-1 sm:grid-cols-2 place-content-center mt-10  sm:m-10   ">
 
 
 
         {/* FEATURING CARD ESQUERDA */}
-        <div style={{ "background-color": "#222222" }}  >
+        <div     >
 
 
-          <h1 id="Maintext" style={{ "color": "#b9b9b9" }} className='text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 mt-10'> Experimental Jazz</h1>
+          <h1 id="Maintext" style={{ "color": "#b9b9b9" }} className='text-center  font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 sm:p-10'> Experimental Jazz</h1>
 
 
           <p style={{ "color": "#b9b9b9" }} className='text-center m-10 '>Decide together with the community who is the best rising legend in the experimental jazz.</p>
@@ -60,9 +60,9 @@ const Contests = () => {
 
         {/* FEATURING CARD DIREITA(IMAGEM) */}
 
-        <div className='p-10'>
-          <div className='' id="module-border-wrap" >
-            <img id="module" class=" " src={'https://bit.ly/3SiQAhe'} />;
+        <div className='p-10 flex flex-column '>
+          <div id="module-border-wrap" >
+            <img id="module" class="w-full " src={'https://bit.ly/3SiQAhe'} />;
           </div>
 
 
@@ -73,17 +73,17 @@ const Contests = () => {
       <br />
       <div >
 
-        <h3 style={{ "color": "#b9b9b9" }} className='text-LEFT ml-10'> Top Contests</h3>
+        <h3 style={{ "color": "#b9b9b9" }} className='text-LEFT p-10'> Top Contests</h3>
 
 
-        <div className="rounded-2xl grid grid-cols-4 place-content-center ">
+        <div className="rounded-2xl grid grid-cols-2 sm:grid-cols-4  place-content-center p-10 gap-4 ">
 
 
           {contests.map((contest) => (
-            <div className='ml-10 mt-10 ' >
+            <div className=' flex flex-column ' >
 
-              <div>
-                <img class="rounded-lg  bg-contain " src={contest.img} key={contest.id} />;
+              <div className=''>
+                <img class="block rounded-lg  w-full h-60 object-cover    " src={contest.img} key={contest.id} />;
                 <h3 className='text-white text-center p-2'>{contest.musictype}</h3>
               </div>
 
