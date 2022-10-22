@@ -60,13 +60,14 @@ const Contests = () => {
 
         {/* FEATURING CARD DIREITA(IMAGEM) */}
 
-        <div className='pr-20' >
-          <img id="FeatImage" class="m-10 " src={'https://bit.ly/3SiQAhe'} />;
+        <div className='p-10'>
+          <div className='' id="module-border-wrap" >
+            <img id="module" class=" " src={'https://bit.ly/3SiQAhe'} />;
+          </div>
+
+
         </div>
-
-
       </div>
-
 
 
       <br />
@@ -79,10 +80,10 @@ const Contests = () => {
 
 
           {contests.map((contest) => (
-            <div id="border" className='ml-10 mt-10 h-100' >
+            <div className='ml-10 mt-10 ' >
 
               <div>
-                <img class="rounded-lg  object-cover h-100 w-100 " src={contest.img} key={contest.id} />;
+                <img class="rounded-lg  bg-contain " src={contest.img} key={contest.id} />;
                 <h3 className='text-white text-center p-2'>{contest.musictype}</h3>
               </div>
 

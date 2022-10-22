@@ -92,3 +92,22 @@ text-fill-color: transparent;
 
 }
 
+#module-border-wrap {
+    
+    
+    position: relative;
+    background: linear-gradient(to right, #BAF9F8, #E6AAF7);
+    padding: 3px;
+    border-radius: 30px;
+    
+    
+  }
+  
+  #module {
+    background: #222;
+    color: white;
+    padding: rem;
+    border-radius: 30px;
+    
+    
+  }
