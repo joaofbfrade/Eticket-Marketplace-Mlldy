@@ -27,29 +27,38 @@ const Contests = () => {
 
 
   return (
-    <div style={{ "background-color": "#1F1F1F" }} className='min-h-screen p-1  sm:p-10  '  >
+    <div style={{ "background-color": "#1F1F1F" }}
+      className='min-h-screen p-1   sm:p-10  '  >
 
 
       {/* FEATURING CARD */}
 
-      <div  style={{ "background-color": "#222222" }} className="rounded-2xl grid grid-cols-1 sm:grid-cols-2 place-content-center mt-10  sm:m-10   ">
+      <div style={{ "background-color": "#222222" }}
+        className="rounded-2xl grid grid-cols-1 lg:grid-cols-2 place-content-center mt-10  sm:m-10    ">
 
 
 
         {/* FEATURING CARD ESQUERDA */}
-        <div     >
+        <div   className='lg:p-5'  >
 
 
-          <h1 id="Maintext" style={{ "color": "#b9b9b9" }} className='text-center  font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 sm:p-10'> Experimental Jazz</h1>
+          <h1 id="Maintext" style={{ "color": "#b9b9b9" }}
+            className='text-6xl  text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 p-1  sm:p-10'> Experimental Jazz</h1>
 
 
-          <p style={{ "color": "#b9b9b9" }} className='text-center m-10 '>Decide together with the community who is the best rising legend in the experimental jazz.</p>
+          <p style={{ "color": "#b9b9b9" }}
+            className='text-base lg:text-xs text-center m-10 lg:m-5 text-lg '>Decide together with the community who is the best rising legend in the experimental jazz.</p>
 
-          <h3 style={{ "color": "#b9b9b9" }} className='text-center mt-20 '> Rewards</h3>
+          <h3 style={{ "color": "#b9b9b9" }}
+            className='text-center text-3xl mt-10  '> Rewards</h3>
 
-          <div className="rounded-lg grid grid-cols-4 place-content-center pl-20 pt-10  " >
+          <div
+            className="flex justify-center gap-4 p-10" >
 
-            <div style={{ "background-color": "#ffffff" }} class="h-10 w-10 m-1 rounded-full" > </div>
+            <div style={{ "background-color": "#ffffff" }} class=" h-10 w-10  rounded-full " > </div>
+            <div style={{ "background-color": "#ffffff" }} class="h-10 w-10  rounded-full" > </div>
+            <div style={{ "background-color": "#ffffff" }} class="h-10 w-10  rounded-full" ></div>
+            <div style={{ "background-color": "#ffffff" }} class="h-10 w-10  rounded-full" > </div>
 
 
           </div>
@@ -60,9 +69,10 @@ const Contests = () => {
 
         {/* FEATURING CARD DIREITA(IMAGEM) */}
 
-        <div className='p-10 flex flex-column '>
+        <div
+          className='flex flex-column lg:p-5      '>
           <div id="module-border-wrap" >
-            <img id="module" class="w-full " src={'https://bit.ly/3SiQAhe'} />;
+            <img id="module" class="w-full h-full " src={'https://bit.ly/3SiQAhe'} />;
           </div>
 
 
@@ -71,18 +81,26 @@ const Contests = () => {
 
 
       <br />
+
+
+
+      {/* TOP CONTESTS */}
+
       <div >
 
-        <h3 style={{ "color": "#b9b9b9" }} className='text-LEFT p-10'> Top Contests</h3>
+        <h1 style={{ "color": "#b9b9b9" }}
+          className='text-LEFT p-10'> Top Contests</h1>
 
 
-        <div className="rounded-2xl grid grid-cols-2 sm:grid-cols-4  place-content-center p-10 gap-4 ">
+        <div
+          className="rounded-2xl grid grid-cols-2 sm:grid-cols-4  place-content-center p-10 gap-4 ">
 
 
           {contests.map((contest) => (
-            <div className=' flex flex-column ' >
+            <div
+              className=' flex flex-column ' >
 
-              <div className=''>
+              <div >
                 <img class="block rounded-lg  w-full h-60 object-cover    " src={contest.img} key={contest.id} />;
                 <h3 className='text-white text-center p-2'>{contest.musictype}</h3>
               </div>
