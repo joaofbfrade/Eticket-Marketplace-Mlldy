@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 
 import { useState } from 'react';
+import Timer from '../components/Timer'
 
 
 
