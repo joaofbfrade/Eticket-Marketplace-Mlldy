@@ -52,6 +52,7 @@ const Contests = () => {
 
           <h3 style={{ "color": "#b9b9b9" }}
             className='text-center text-3xl mt-10  '> Rewards</h3>
+            <Timer />
 
           <div
             className="flex justify-center gap-4 p-10" >
