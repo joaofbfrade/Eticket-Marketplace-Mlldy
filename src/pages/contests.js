@@ -6,7 +6,7 @@ import Card from 'react-bootstrap/Card';
 
 import { useState } from 'react';
 import Timer from '../components/Timer'
-
+import Dropdown from '../components/Dropdown'
 
 
 
@@ -27,6 +27,7 @@ const Contests = () => {
 
 
 
+
   return (
     <div style={{ "background-color": "#1F1F1F" }}
       className='min-h-screen p-1   sm:p-10  '  >
@@ -40,7 +41,7 @@ const Contests = () => {
 
 
         {/* FEATURING CARD ESQUERDA */}
-        <div   className='lg:p-5'  >
+        <div className='lg:p-5'  >
 
 
           <h1 id="Maintext" style={{ "color": "#b9b9b9" }}
@@ -52,7 +53,8 @@ const Contests = () => {
 
           <h3 style={{ "color": "#b9b9b9" }}
             className='text-center text-3xl mt-10  '> Rewards</h3>
-            <Timer />
+          <Timer />
+
 
           <div
             className="flex justify-center gap-4 p-10" >
@@ -87,36 +89,39 @@ const Contests = () => {
 
 
       {/* TOP CONTESTS */}
+      <div class>
+        <div >
+          <div className=' p-10 float-right'><Dropdown /></div>
+          <h1 style={{ "color": "#b9b9b9" }}
+            className='text-LEFT p-10'> Top Contests</h1>
 
-      <div >
-
-        <h1 style={{ "color": "#b9b9b9" }}
-          className='text-LEFT p-10'> Top Contests</h1>
-
-
-        <div
-          className="rounded-2xl grid grid-cols-2 sm:grid-cols-4  place-content-center p-10 gap-4 ">
+          <div />
 
 
-          {contests.map((contest) => (
-            <div
-              className=' flex flex-column ' >
 
-              <div >
-                <img class="block rounded-lg  w-full h-60 object-cover    " src={contest.img} key={contest.id} />;
-                <h3 className='text-white text-center p-2'>{contest.musictype}</h3>
+          <div
+            className="rounded-2xl grid grid-cols-2 sm:grid-cols-4  place-content-center p-10 gap-4 ">
+
+
+            {contests.map((contest) => (
+              <div
+                className=' flex flex-column ' >
+
+                <div >
+                  <img class="block rounded-lg  w-full h-60 object-cover    " src={contest.img} key={contest.id} />;
+                  <h3 className='text-white text-center p-2'>{contest.musictype}</h3>
+                </div>
+
               </div>
 
-            </div>
 
 
 
 
 
-
-          ))}
+            ))}
+          </div>
         </div>
-
       </div>
     </div>
   );
