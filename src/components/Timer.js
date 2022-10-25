@@ -90,11 +90,11 @@ const Timer = () => {
 	}
 
 	return (
-		<div>
-			<h2 id="Maintext" style={{"color": "#b9b9b9"}}
+        <div>
+            <h2 id="Maintext" style={{"color": "#b9b9b9"}}
                 className='text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600
                 md:text-7xl md:mt-16
-                sm:text-8xl
+
                 text-4xl mb-0'>
                 {timer}
             </h2>

@@ -96,7 +96,7 @@ text-fill-color: transparent;
     
     position: relative;
     background: linear-gradient(to right, #BAF9F8, #E6AAF7);
-    padding: 3px;
+    padding: 10px;
     border-radius: 30px;
     
     
@@ -111,4 +111,36 @@ text-fill-color: transparent;
     
   }
 
+
+  .container {
+    position: relative;
+    text-align: center;
+    color: white;
+    
+    
+  }
  
+#legenda{
+
+    position: absolute;
+    bottom: 1px;
+    text-align: center;
+    
+    box-shadow: inset 0px -46px 44px rgba(199, 10, 128, 0.25);
+    
+}
+
+
+#imgcont{
+
+    
+    box-shadow: inset 0px -20px 20px rgba(199, 10, 128, 0.25);
+    
+    
+}
+
+
+#img1{
+    
+    z-index: 1;
+}
