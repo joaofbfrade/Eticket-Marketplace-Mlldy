@@ -20,11 +20,6 @@ const IndividualContest = () => {
 
   const [id, setId] = useState(0);
 
-  const [isActive, setIsActive] = useState(false);
-  const handleClick = () => {
-    setIsActive(current => !current);
-  };
-
   return (
     <div style={{ "background-color": "#1F1F1F" }} className='min-h-screen p-1 sm:p-10'  >
 
@@ -57,8 +52,6 @@ const IndividualContest = () => {
 
             <Timer />
 
-            {/* flex justify-center content-center text-center items-center place-content-center */}
-
             <div className='flex justify-center mt-20'>
                 <a id='GetRewardsIndividualButton' href='#'>
                     <span style={{ "color": "white" }} className='text-center'>
@@ -68,7 +61,7 @@ const IndividualContest = () => {
             </div>
             
             <div className="rounded-lg grid grid-cols-4 place-content-center pl-20 pt-10  " >
-
+            
             </div>
 
         </div>
@@ -99,6 +92,9 @@ const IndividualContest = () => {
           ))}
 
         </div>
+
+        <p style={{ "color": "#b9b9b9" }} className='text-center pt-3 pb-1'>Select you artist</p>
+
       </div>
 
     </div>
