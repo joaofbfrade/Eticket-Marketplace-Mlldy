@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 
@@ -10,15 +11,19 @@ import { useState, useRef, useEffect  } from 'react';
 
 const IndividualContest = () => {
 
-
-  const [contests, setcontests] = useState([
-    { musictype: 'Best Indie Rock', img: 'https://bit.ly/3SiQAhe', id: 1 },
-    { musictype: 'Live Performance', img: 'https://bit.ly/3TrlsNQ', id: 2 },
-    { musictype: 'Best HipHop', img: 'https://bit.ly/3F2n5xa', id: 3 },
-    { musictype: 'Best PopMusic', img: 'https://bit.ly/3gvVN81', id: 4 }
+  const [artists, setartists] = useState([
+    { artistsname: 'Artist1', artistsrole: "Producer", img: 'https://64.media.tumblr.com/e775f7195176c4e70f2654f1d5ff0bfe/tumblr_inline_phvike3zgg1t0myks_500.png', id: 1 },
+    { artistsname: 'Artist2', artistsrole: "Producer", img: 'https://cdna.artstation.com/p/assets/images/images/017/787/280/large/annika-soljander-icons2.jpg?1557336279', id: 2 },
+    { artistsname: 'Artist3', artistsrole: "Producer", img: 'https://i.pinimg.com/564x/b3/f7/00/b3f70014d73b6ad9311a0f197976b555.jpg', id: 3 },
+    { artistsname: 'Artist4', artistsrole: "Producer", img: 'https://uploads.scratch.mit.edu/users/avatars/58329667.png', id: 4 }
   ]);
 
+  const [id, setId] = useState(0);
 
+  const [isActive, setIsActive] = useState(false);
+  const handleClick = () => {
+    setIsActive(current => !current);
+  };
 
   return (
     <div style={{ "background-color": "#1F1F1F" }} className='min-h-screen p-1 sm:p-10'  >
@@ -72,28 +77,30 @@ const IndividualContest = () => {
 
 
       <br />
-      <div >
-
-        <h3 style={{ "color": "#b9b9b9" }} className='text-LEFT ml-10'> Top Contests</h3>
 
 
-        <div className="rounded-2xl grid grid-cols-4 place-content-center ">
+      <div id="maincard" style={{ "background-color": "#222222" }} className="rounded-2xl grid place-content-center ml-10  ">
 
+        <h3 style={{ "color": "#b9b9b9" }} className='text-LEFT pt-4 pb-3'> Contest Artists</h3>
 
-          {contests.map((contest) => (
-            <div className='ml-10 mt-10 ' >
+        {/* <div className="rounded-2xl grid grid-cols-4 gap-4 place-content-center"> */}
+        <div className="rounded-2xl grid grid-cols-4 gap-4">
 
-              <div>
-                <img class="rounded-lg  bg-contain " src={contest.img} key={contest.id} />;
-                <h3 className='text-white text-center p-2'>{contest.musictype}</h3>
+          {artists.map((artists) => (
+            <div className='w-80' >
+              <div class="linearBorder center-img" style={{ backgroundColor: artists.id == id ? '#363636' : ''}} onClick={() => setId(artists.id)}>
+                <div className='pt-20 pb-12'>
+                  <img className='' class="profileImg" src={artists.img} key={artists.id} />;
+                </div>
+                <h3 className='text-white text-center p-1'>{artists.artistsname}</h3>
+                <p className='text-white text-center p-1'>{artists.artistsrole}</p>
               </div>
-
             </div>
-
           ))}
-        </div>
 
+        </div>
       </div>
+
     </div>
   );
 };

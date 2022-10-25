@@ -1,8 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-
+import ReactDOM from "react-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Card from 'react-bootstrap/Card';
 
 import { useState } from 'react';
 
@@ -55,10 +53,8 @@ const Contests = () => {
 
         <div className='p-10'>
           <div className='' id="module-border-wrap" >
-            <img id="module" class=" " src={'https://bit.ly/3SiQAhe'} />;
+            <img id="module" class=" " alt='wtv' src={'https://bit.ly/3SiQAhe'} />;
           </div>
-
-
         </div>
       </div>
 
@@ -76,16 +72,11 @@ const Contests = () => {
             <div className='ml-10 mt-10 ' >
 
               <div>
-                <img class="rounded-lg  bg-contain " src={contest.img} key={contest.id} />;
+                <img class="rounded-lg  bg-contain" alt='wtv' src={contest.img} key={contest.id} />;
                 <h3 className='text-white text-center p-2'>{contest.musictype}</h3>
               </div>
 
             </div>
-
-
-
-
-
 
           ))}
         </div>

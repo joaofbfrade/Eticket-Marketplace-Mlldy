@@ -1,5 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from "react-dom";
+
 import { MoralisProvider } from "react-moralis";
 
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
@@ -7,7 +8,7 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Navbar2 from './components/Navbar2';
 import Welcome from './pages/welcome';
 import Contests from './pages/contests';
-import Marketplace from './pages/marketplace';
+
 
 import IndividualContest from './pages/individualcontest';
 
