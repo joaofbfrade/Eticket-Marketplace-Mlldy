@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+import ProgressBar from 'react-bootstrap/ProgressBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 
@@ -19,68 +20,65 @@ const IndividualContest = () => {
   ]);
 
   const [id, setId] = useState(0);
+  const [votedAmount, setVoteAmount] = useState(0);
 
   return (
     <div style={{ "background-color": "#1F1F1F" }} className='min-h-screen p-1 sm:p-10'  >
 
-
-      {/* FEATURING CARD */}
-
       <div id="maincard" style={{ "background-color": "" }} className="rounded-2xl grid grid-cols-1 place-content-center ml-10 mr-10">
 
-
-
-        {/* FEATURING CARD ESQUERDA */}
         <div style={{ "background-color": "" }}  >
 
-
-            <p id="Maintext" style={{ "color": "#b9b9b9"}} 
+          <p id="Maintext" style={{ "color": "#b9b9b9"}} 
+              className='text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600
+                          xl:text-9xl md:mt-20 md:text-7xl
+                          sm:pt-4 sm:pb-10
+                          text-5xl'> 
+              Experimental Jazz
+          </p>
+  
+            {/* <p id="Maintext" style={{ "color": "#b9b9b9"}} 
                 className='text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600
-                            md:text-7xl md:mt-24
-                            sm:text-8xl
+                            md:text-7xl md:mt-20
                             text-4xl mb-0 mt-6'> 
                 Experimental Jazz
-            </p>
+            </p> */}
 
 
-            <p style={{ "color": "#b9b9b9"}} 
+            {/* <p style={{ "color": "#b9b9b9"}} 
                 className='text-center  
                             md:text-2xl md:pt-8
                             text-sm'>
                 Decide together with the community who is the  <br></br> best rising legend in the experimental jazz.
-            </p>
+            </p> */}
 
             <Timer />
 
-            <div className='flex justify-center mt-20'>
+            {/* <div className='flex justify-center mt-20'>
                 <a id='GetRewardsIndividualButton' href='#'>
                     <span style={{ "color": "white" }} className='text-center'>
                         Get Rewards
                     </span>
                 </a>
-            </div>
-            
-            <div className="rounded-lg grid grid-cols-4 place-content-center pl-20 pt-10  " >
-            
-            </div>
+            </div> */}
+          
+            <div className="rounded-lg grid grid-cols-4 place-content-center pl-20 pt-8  " ></div>
 
         </div>
 
       </div>
 
-
       <br />
 
+      <div id="maincard" style={{ "background-color": "#222222" }} className="rounded-2xl grid place-content-center md:mr-24 md:ml-24 mr-12 ml-12 mb-16  ">
 
-      <div id="maincard" style={{ "background-color": "#222222" }} className="rounded-2xl grid place-content-center ml-10  ">
-
-        <h3 style={{ "color": "#b9b9b9" }} className='text-LEFT pt-4 pb-3'> Contest Artists</h3>
+        <h3 style={{ "color": "#F3F3F3" }} className='text-LEFT pt-4 pb-3'> Contest Artists</h3>
 
         {/* <div className="rounded-2xl grid grid-cols-4 gap-4 place-content-center"> */}
-        <div className="rounded-2xl grid grid-cols-4 gap-4">
+        <div className="rounded-2xl grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
 
           {artists.map((artists) => (
-            <div className='w-80' >
+            <div className='2xl:w-80 xl:w-64 md:w-60 sm:w-60 w-48' >
               <div class="linearBorder center-img" style={{ backgroundColor: artists.id == id ? '#363636' : ''}} onClick={() => setId(artists.id)}>
                 <div className='pt-20 pb-12'>
                   <img className='' class="profileImg" src={artists.img} key={artists.id} />;
@@ -93,8 +91,38 @@ const IndividualContest = () => {
 
         </div>
 
-        <p style={{ "color": "#b9b9b9" }} className='text-center pt-3 pb-1'>Select you artist</p>
+        <p style={{ "color": "#b9b9b9" }} className='text-center text-xl pt-3 pb-1'>Select you artist</p>
 
+      </div>
+
+      <div className='flex justify-center'>
+        <a id='GetRewardsIndividualButton' href='#'>
+          <span style={{ "color": "white" }} className='text-center'>
+          Claim Rewards
+          </span>
+        </a>
+      </div>
+
+      <p style={{ "color": "#F3F3F3"}} 
+        className='text-center font-semibold text-transparent bg-clip-tex
+                    xl:text-7xl md:mt-16 md:text-6xl
+                    sm:pt-4 sm:pb-4
+                    text-5xl'> 
+        Voting Rewards
+      </p>
+
+      <p style={{ "color": "#b9b9b9"}} 
+        className='text-center  
+                    md:text-2xl
+                    text-sm'>
+        By voting on your favourite artist both are <br /> winning, unlock new tiers and discover new <br /> exclusive rewards for the participants.
+      </p> 
+
+      <div className='rounded-2xl grid place-content-center '>
+        <input className='mb-6 w-16' onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()} onChange={(e)=>{setVoteAmount(e.target.value)}}/>
+        <div className='w-96'>
+          <ProgressBar variant="COLOR" now={votedAmount} max={100000} />;
+        </div>
       </div>
 
     </div>

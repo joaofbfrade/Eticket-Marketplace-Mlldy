@@ -55,8 +55,8 @@ element.style{
 }
 
 
-#Maintext{
 
+#Maintext{
     font-style: normal;
     font-weight: 600;
 
@@ -100,82 +100,97 @@ element.style{
 }
 
 
-#GetRewardsIndividualButton {
-    position: relative;
-    /* display: flex; */
-    line-height: 1;
-    text-decoration: none;
+/*Get Rewards Button from INDIVIDUAL CONTEST PAGE*/
+    #GetRewardsIndividualButton {
+        position: relative;
+        /* display: flex; */
+        line-height: 1;
+        text-decoration: none;
 
-    padding: 20px 100px 25px 100px;
-    text-align: center;
+        padding: 20px 100px 25px 100px;
+        text-align: center;
 
-    font-size: 34px;
-    font-weight: 600;
+        font-size: 34px;
+        font-weight: 600;
 
-    border-radius: 50px;
-}
+        border-radius: 50px;
+    }
 
-#GetRewardsIndividualButton::before {
+    #GetRewardsIndividualButton::before {
+        
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 50px;
+        border: 3px solid transparent;
+        background: linear-gradient(180deg, #BAF9F8 0%, #E6AAF7 100%) border-box;
+        -webkit-mask:
+            linear-gradient(#fff 0 0) padding-box, 
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+                mask-composite: exclude; 
+    }
+
+/*Linear grading border from INDIVIDUAL CONTEST PAGE*/
+    .linearBorder{
+        position: relative;
+        border-radius: 20px;
+        line-height: 1;
+    }
+
+    .linearBorder::before{
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 20px;
+        border: 2px solid transparent;
+        background: linear-gradient(180deg, #BAF9F8 0%, #E6AAF7 100%) border-box;
+        -webkit-mask:
+            linear-gradient(#fff 0 0) padding-box, 
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+                mask-composite: exclude; 
+    }
+
+    .linearBorder:hover{
+        background-color: rgb(31, 31, 31);
+    }
+
+
+/*Artists Cards from INDIVIDUAL CONTEST PAGE*/
+    .profileImg{
+        border-radius:50%;
+    }
     
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 50px;
-    border: 3px solid transparent;
-    background: linear-gradient(180deg, #BAF9F8 0%, #E6AAF7 100%) border-box;
-    -webkit-mask:
-        linear-gradient(#fff 0 0) padding-box, 
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-            mask-composite: exclude; 
-}
-
-.linearBorder{
-    position: relative;
-    border-radius: 20px;
-    line-height: 1;
-}
-
-.linearBorder::before{
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 20px;
-    border: 2px solid transparent;
-    background: linear-gradient(180deg, #BAF9F8 0%, #E6AAF7 100%) border-box;
-    -webkit-mask:
-        linear-gradient(#fff 0 0) padding-box, 
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-            mask-composite: exclude; 
-}
-
-.linearBorder:hover{
-    background-color: rgb(31, 31, 31);
-}
+    .center-img {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .center-img > div {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+    }
+    
+    .center-img > div > img {
+        width: 100%;
+    }
 
 
-.profileImg{
-    border-radius:50%;
-}
-  
-.center-img {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/*voting progress bar from INDIVIDUAL CONTEST PAGE*/
+
+    /* progress bar color*/
+  .bg-COLOR{
+    /* background-color: #DCDDDE!important; */
+    background-color: #E1A3F3!important;
   }
-  
-  .center-img > div {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
+  /* progress bar background color*/
+  .progress{
+    /* background-color: #1D1D1D!important; */
   }
-  
-  .center-img > div > img {
-    width: 100%;
-  }
-
 
   
