@@ -1,4 +1,4 @@
-import { useState } from 'react';
+
 
 const ContestList = ({ contests }) => {
 
@@ -21,14 +21,21 @@ const ContestList = ({ contests }) => {
           
         </div>
 
+      
 
 
 
 
 
       ))}
+
+
+      
       
     </div>
+
+
+
 
 
   );
