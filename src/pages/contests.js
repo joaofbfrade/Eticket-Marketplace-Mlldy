@@ -103,15 +103,15 @@ const Contests = () => {
 
         <div
           className='flex place-self-center center  w-96 lg:w-8/12  md:p-10 lg:p-0 lg:pt-10 lg:pb-10  '>
-          <div id="module-border-wrap" className='ease-in duration-300  hover:scale-110' >
-            <img id="module" class="w-full h-full " src={'https://bit.ly/3SiQAhe'} />;
-          </div>
+          <a id="module-border-wrap" href="../individualcontest" className='ease-in duration-300  hover:scale-105' >
+            <img id="module" class="w-full h-full " src={'https://bit.ly/3SiQAhe'} />
+          </a>
         </div>
       </div>
 
       <br />
       <div className='flex flex-col   items-center '>
-        <img class=" -z-10 sm:z-0  w-20 animate-bounce " src={mouse} />;
+        <img class=" -z-10 sm:z-0  w-20 animate-bounce " src={mouse} />
       </div>
       <br />
 
@@ -135,6 +135,23 @@ const Contests = () => {
 
         </div>
       </div>
+
+      <br />
+
+      <p style={{ "color": "#F3F3F3"}} 
+        className='text-center font-semibold text-transparent bg-clip-tex
+                    xl:text-6xl md:mt-16 md:text-6xl
+                    sm:pt-4 sm:pb-4
+                    text-5xl'> 
+        This is all about having fun
+      </p>
+
+      <p style={{ "color": "#b9b9b9"}} 
+        className='text-center  
+                    md:text-2xl
+                    text-sm'>
+       Vote on your favourite artists, get rewards incentivise them, we all win blablabla bla.
+      </p> 
 
     </div>
   );
