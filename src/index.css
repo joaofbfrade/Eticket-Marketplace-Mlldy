@@ -31,12 +31,13 @@
     font-weight: 600!important;
 }
 
-
-.form-control
-{
-    background-color: #212529!important;
+.navbar{
+    background-color:#1F1F1F!important;
 }
 
+.form-control{
+    background-color:#1F1F1F!important;
+}
 
 element.style{
     padding-left: 10px;

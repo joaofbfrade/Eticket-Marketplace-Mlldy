@@ -5,7 +5,7 @@ import { MoralisProvider } from "react-moralis";
 
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
-import Navbar2 from './components/Navbar2';
+import Navbar1 from './components/Navbar1';
 import Welcome from './pages/welcome';
 import Contests from './pages/contests';
 
@@ -17,7 +17,7 @@ const App = () => {
         <>
             <Router>
             <MoralisProvider appId="wlzRrvHDWBuWvZhmBD1zIelwKOuIHHqppirPd3VA" serverUrl="https://s2ni7eolynpx.usemoralis.com:2053/server"> 
-                <Navbar2 />
+                <Navbar1 />
             
                 <Routes>
                     <Route exact path='/' element={<Welcome />} />
