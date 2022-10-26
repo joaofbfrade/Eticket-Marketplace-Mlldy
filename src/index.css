@@ -87,7 +87,7 @@ element.style{
     
     position: relative;
     background: linear-gradient(to right, #BAF9F8, #E6AAF7);
-    padding: 3px;
+    padding: 10px;
     border-radius: 30px;
         
 }
@@ -97,75 +97,6 @@ element.style{
     color: white;
     padding: rem;
     border-radius: 30px;
-}
-
-
-/*Get Rewards Button from INDIVIDUAL CONTEST PAGE*/
-    #GetRewardsIndividualButton {
-        position: relative;
-        /* display: flex; */
-        line-height: 1;
-        text-decoration: none;
-
-        padding: 20px 100px 25px 100px;
-        text-align: center;
-
-        font-size: 34px;
-        font-weight: 600;
-
-        border-radius: 50px;
-    }
-
-    #GetRewardsIndividualButton::before {
-        
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: 50px;
-        border: 3px solid transparent;
-        background: linear-gradient(180deg, #BAF9F8 0%, #E6AAF7 100%) border-box;
-        -webkit-mask:
-            linear-gradient(#fff 0 0) padding-box, 
-            linear-gradient(#fff 0 0);
-        -webkit-mask-composite: xor;
-                mask-composite: exclude; 
-    }
-
-/*Linear grading border from INDIVIDUAL CONTEST PAGE*/
-    .linearBorder{
-        position: relative;
-        border-radius: 20px;
-        line-height: 1;
-    }
-
-    .linearBorder::before{
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: 20px;
-        border: 2px solid transparent;
-        background: linear-gradient(180deg, #BAF9F8 0%, #E6AAF7 100%) border-box;
-        -webkit-mask:
-            linear-gradient(#fff 0 0) padding-box, 
-            linear-gradient(#fff 0 0);
-        -webkit-mask-composite: xor;
-                mask-composite: exclude; 
-    }
-
-    .linearBorder:hover{
-        background-color: rgb(31, 31, 31);
-    }
-
-
-/*Artists Cards from INDIVIDUAL CONTEST PAGE*/
-    .profileImg{
-        border-radius:50%;
-    }
-    
-    .center-img {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
     
     .center-img > div {
@@ -194,3 +125,36 @@ element.style{
   }
 
   
+
+  .container {
+    position: relative;
+    text-align: center;
+    color: white;
+    
+    
+  }
+ 
+#legenda{
+
+    position: absolute;
+    bottom: 1px;
+    text-align: center;
+    
+    box-shadow: inset 0px -46px 44px rgba(199, 10, 128, 0.25);
+    
+}
+
+
+#imgcont{
+
+    
+    box-shadow: inset 0px -20px 20px rgba(199, 10, 128, 0.25);
+    
+    
+}
+
+
+#img1{
+    
+    z-index: 1;
+}
