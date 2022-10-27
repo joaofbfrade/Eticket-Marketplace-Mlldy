@@ -18,10 +18,10 @@ const IndividualContest = () => {
   const contest = { contestname: 'Experimental Jazz', contestdescription: '', contesttype: "Alternative", img: 'https://64.media.tumblr.com/e775f7195176c4e70f2654f1d5ff0bfe/tumblr_inline_phvike3zgg1t0myks_500.png', id: 1 };
 
   const artists = [
-    { artistsname: 'Artist1', artistsrole: "Producer", img: 'https://64.media.tumblr.com/e775f7195176c4e70f2654f1d5ff0bfe/tumblr_inline_phvike3zgg1t0myks_500.png', id: 1 },
-    { artistsname: 'Artist2', artistsrole: "Producer", img: 'https://cdna.artstation.com/p/assets/images/images/017/787/280/large/annika-soljander-icons2.jpg?1557336279', id: 2 },
-    { artistsname: 'Artist3', artistsrole: "Producer", img: 'https://i.pinimg.com/564x/b3/f7/00/b3f70014d73b6ad9311a0f197976b555.jpg', id: 3 },
-    { artistsname: 'Artist4', artistsrole: "Producer", img: 'https://uploads.scratch.mit.edu/users/avatars/58329667.png', id: 4 }
+    { artistsname: 'Artist1', artistsrole: "Producer", img: 'https://64.media.tumblr.com/e775f7195176c4e70f2654f1d5ff0bfe/tumblr_inline_phvike3zgg1t0myks_500.png', id: 10 },
+    { artistsname: 'Artist2', artistsrole: "Producer", img: 'https://cdna.artstation.com/p/assets/images/images/017/787/280/large/annika-soljander-icons2.jpg?1557336279', id: 20 },
+    { artistsname: 'Artist3', artistsrole: "Producer", img: 'https://i.pinimg.com/564x/b3/f7/00/b3f70014d73b6ad9311a0f197976b555.jpg', id: 30 },
+    { artistsname: 'Artist4', artistsrole: "Producer", img: 'https://uploads.scratch.mit.edu/users/avatars/58329667.png', id: 40 }
   ];
 
   const [selectedArtistId, setId] = useState(0);

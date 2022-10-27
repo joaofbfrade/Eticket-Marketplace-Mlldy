@@ -13,7 +13,7 @@ const GetRewardsPopUp = ({artists, selectedArtistId}) => {
 
 
     // Using state to keep track of what the selected fruit is
-    let [artistSelected, setArtistSelected] = useState("⬇️ Select a fruit ⬇️")
+    let [artistSelected, setArtistSelected] = useState("")
     
     // Using this function to update the state of fruit
     // whenever a new option is selected from the dropdown
@@ -21,6 +21,8 @@ const GetRewardsPopUp = ({artists, selectedArtistId}) => {
         setArtistSelected(e.target.value)
     }
 
+    let nameToDisplay;
+    
     return (  
 
             <div id='linearBorder' className='ml-48 mr-48' style={{"zIndex":"1"}}>
@@ -56,14 +58,24 @@ const GetRewardsPopUp = ({artists, selectedArtistId}) => {
                         className='text-center  
                                     md:text-3xl
                                     text-sm ml-3'>
-                        {/* Hibinger */}
+                        Hibinger
                         </p>
+
+                        {artists.map((artists) => ( artists.id == selectedArtistId ? nameToDisplay = artists.artistsname : '' ))}
+
+                        {console.log(artists.id == selectedArtistId)}
+                        {console.log(nameToDisplay)}
+
+                        <h1>
+                            {nameToDisplay}
+                        </h1>
+
+    
+
                         
                         <ArtistsDropdown options={artists} />
 
                         <select style={{"zIndex":"10"}} onChange={handleArtistChange}> 
-                            <option value=""> {(() => { if(artists.id = selectedArtistId)
-                                                            return(artists.artistsname)})} </option>
                                     {/* Mapping through each fruit object in our fruits array
                                 and returning an option element with the appropriate attributes / values.
                                 */}
