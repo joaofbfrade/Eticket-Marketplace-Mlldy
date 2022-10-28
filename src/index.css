@@ -228,6 +228,7 @@ element.style{
     position: relative;
     border-radius: 20px;
     line-height: 1;
+   
   }
 
   .popup-content::before{
@@ -269,6 +270,7 @@ element.style{
   [role="tooltip"].popup-content {
     width: 80%!important;
     top: 60%!important;
+    
   }
 
   [data-popup="tooltip"].popup-overlay {
@@ -276,8 +278,23 @@ element.style{
   }
 
   #popup-2{
-    top: 10%!important;
-    left: 100%!important;
+    top: 20%!important;
+    left: 10%!important;
+  }
+
+  #popup-4{
+    top: 20%!important;
+    left: 10%!important;
+  }
+
+  #popup-6{
+    top: 20%!important;
+    left: 10%!important;
+  }
+
+  #popup-8{
+    top: 20%!important;
+    left: 10%!important;
   }
 
 #linearBorder{
@@ -290,6 +307,7 @@ border-radius: 20px;
     content: "";
     position: absolute;
     inset: 0;
+    
     border-radius: 20px;
     border: 2px solid transparent;
     background: linear-gradient(180deg, #BAF9F8 0%, #E6AAF7 100%) border-box;

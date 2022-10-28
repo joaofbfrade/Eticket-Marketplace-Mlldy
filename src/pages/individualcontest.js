@@ -64,8 +64,8 @@ const IndividualContest = () => {
           {artists.map((artists) => (
             <div className='2xl:w-80 xl:w-64 md:w-60 sm:w-60 w-48' >
 
-              <Popup id='popup-content2' trigger={
-                <div class="linearBorder center-img " style={{ backgroundColor: artists.id == selectedArtistId ? '#363636' : '' }} onClick={() => setId(artists.id)}>
+              <Popup  trigger={
+                <div class="linearBorder center-img" style={{ backgroundColor: artists.id == selectedArtistId ? '#363636' : '' }} onClick={() => setId(artists.id)}>
                   <div className='pt-20 pb-12'>
                     <img className='' class="profileImg" src={artists.img} key={artists.id} />;
                   </div>
