@@ -16,16 +16,16 @@ const App = () => {
     return (
         <>
             <Router>
-            <MoralisProvider appId="wlzRrvHDWBuWvZhmBD1zIelwKOuIHHqppirPd3VA" serverUrl="https://s2ni7eolynpx.usemoralis.com:2053/server"> 
-                <Navbar1 />
-            
-                <Routes>
-                    <Route exact path='/' element={<Welcome />} />
-                    <Route exact path='/contests' element={<Contests/>} />
-                    {/* <Route exact path='/marketplace' element={<Marketplace/>} /> */}
-                    <Route exact path='/individualcontest' element={<IndividualContest/>} />
+                <MoralisProvider appId="wlzRrvHDWBuWvZhmBD1zIelwKOuIHHqppirPd3VA" serverUrl="https://s2ni7eolynpx.usemoralis.com:2053/server"> 
+                    <Navbar1 />
                 
-                </Routes>
+                    <Routes>
+                        <Route exact path='/' element={<Welcome />} />
+                        <Route exact path='/contests' element={<Contests/>} />
+                        {/* <Route exact path='/marketplace' element={<Marketplace/>} /> */}
+                        <Route exact path='/individualcontest' element={<IndividualContest/>} />
+                    
+                    </Routes>
 
                 </MoralisProvider>
             </Router>

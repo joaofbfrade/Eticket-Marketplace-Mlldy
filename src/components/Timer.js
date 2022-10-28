@@ -5,6 +5,8 @@ import Card from 'react-bootstrap/Card';
 
 import { useState, useRef, useEffect  } from 'react';
 
+const contestTimer = {timestring: '04 : 00 : 59 : 59', timeseconds: 10627200};
+
 const Timer = () => {
 
 	// We need ref in this, because we are dealing
@@ -14,7 +16,6 @@ const Timer = () => {
 
 	// The state for our timer
 	const [timer, setTimer] = useState('00:00:00');
-
 
 	const getTimeRemaining = (e) => {
 		const total = Date.parse(e) - Date.parse(new Date());
@@ -51,7 +52,7 @@ const Timer = () => {
 		// If you adjust it you should also need to
 		// adjust the Endtime formula we are about
 		// to code next	
-		setTimer('01 : 05 : 31 : 11');
+		setTimer(contestTimer.timestring);
 
 		// If you try to remove this line the
 		// updating of timer Variable will be
@@ -68,7 +69,7 @@ const Timer = () => {
 
 		// This is where you need to adjust if
 		// you entend to add more time
-		deadline.setSeconds(deadline.getSeconds() + 86400*1.23);
+		deadline.setSeconds(deadline.getSeconds() + contestTimer.timeseconds);
 		return deadline;
 	}
 
@@ -94,7 +95,6 @@ const Timer = () => {
 			<h2 id="Maintext" style={{"color": "#b9b9b9"}}
                 className='text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600
                 md:text-7xl md:mt-16
-              
                 text-4xl mb-0'>
                 {timer}
             </h2>
@@ -116,34 +116,6 @@ const Timer = () => {
                         SECONDS
                     </p>
             </div>
-
-            {/* <div style={{"color":"white"}} className='text-center space-x-16 ml-8'>
-
-                <div style={{"display": "inline-block"}} className='text-center space-x-20
-                    md:text-base md:pt-4
-                    text-xs'>
-                    
-                    <p style={{"display": "inline-block"}} className='text-center'>
-                        DAYS
-                    </p>
-                    <p style={{"display": "inline-block"}} className='text-center'>
-                        HOURS
-                    </p>
-    
-                </div>
-
-                <div style={{"display": "inline-block"}} className='text-center space-x-14
-                    md:text-base md:pt-4
-                    text-xs'>
-
-                    <p style={{"display": "inline-block"}} className='text-center'>
-                        MINUTES
-                    </p>
-                    <p style={{"display": "inline-block"}} className='text-center'>
-                        SECONDS
-                    </p>
-                </div>
-            </div> */}
 
 			{/* <button onClick={onClickReset} style={{"color":"white"}}>Reset</button> */}
 		</div>

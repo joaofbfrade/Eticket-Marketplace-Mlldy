@@ -10,6 +10,7 @@ import Dropdown from '../components/Dropdown'
 import ContestList from '../components/ContestList';
 
 
+const showcaseContest = { contesttitle:'Experimental Jazz', contestdescription:'Decide together with the community who is the best rising legend in the experimental jazz.', musictype: 'Jazz', img: 'https://bit.ly/3SiQAhe', id: 1};
 
 const json = [
   { musictype: 'Best Indie Rock', img: 'https://bit.ly/3SiQAhe', id: 1 },
@@ -27,14 +28,8 @@ const Contests = () => {
   const options = json;
   const [contests, setcontests] = useState(json);
 
-
-
   const filter2 = () => {
-
-
     setcontests(json);
-    console.log("aaa");
-
   }
 
 
@@ -71,11 +66,11 @@ const Contests = () => {
 
 
           <h1 id="Maintext" style={{ "color": "#b9b9b9" }}
-            className='text-5xl  text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 sm:p-5 lg:pt-10 '> Experimental Jazz</h1>
+            className='text-5xl  text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 sm:p-5 lg:pt-10 '> {showcaseContest.contesttitle}</h1>
 
           <div className=' '>
             <p style={{ "color": "#b9b9b9" }}
-              className='text-base  text-center  lg:m-5  '>Decide together with the community who is the best rising legend in the experimental jazz.</p>
+              className='text-base  text-center  lg:m-5  '>{showcaseContest.contestdescription}</p>
           </div>
           <h3 style={{ "color": "#b9b9b9" }}
             className='text-center text-3xl mt-10 lg:pb-5 '> Rewards</h3>
@@ -103,15 +98,15 @@ const Contests = () => {
 
         <div
           className='flex place-self-center center  w-96 lg:w-8/12  md:p-10 lg:p-0 lg:pt-10 lg:pb-10  '>
-          <a id="module-border-wrap" href="../individualcontest" className='ease-in duration-300  hover:scale-105' >
-            <img id="module" class="w-full h-full " src={'https://bit.ly/3SiQAhe'} />
-          </a>
+          <div id="module-border-wrap" className='ease-in duration-300  hover:scale-110' >
+            <img id="module" class="w-full h-full " src={showcaseContest.img} />;
+          </div>
         </div>
       </div>
 
       <br />
       <div className='flex flex-col   items-center '>
-        <img class=" -z-10 sm:z-0  w-20 animate-bounce " src={mouse} />
+        <img class=" -z-10 sm:z-0  w-20 animate-bounce " src={mouse} />;
       </div>
       <br />
 
@@ -135,23 +130,6 @@ const Contests = () => {
 
         </div>
       </div>
-
-      <br />
-
-      <p style={{ "color": "#F3F3F3"}} 
-        className='text-center font-semibold text-transparent bg-clip-tex
-                    xl:text-6xl md:mt-16 md:text-6xl
-                    sm:pt-4 sm:pb-4
-                    text-5xl'> 
-        This is all about having fun
-      </p>
-
-      <p style={{ "color": "#b9b9b9"}} 
-        className='text-center  
-                    md:text-2xl
-                    text-sm'>
-       Vote on your favourite artists, get rewards incentivise them, we all win blablabla bla.
-      </p> 
 
     </div>
   );

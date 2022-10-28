@@ -11,11 +11,6 @@ function classNames(...classes) {
 
 const Dropdown = ({ contests, filter, options ,filter2 }) => {
 
-
-
-
-
-
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div onClick={() => filter2(contests.musictype)} >
@@ -41,27 +36,9 @@ const Dropdown = ({ contests, filter, options ,filter2 }) => {
 
 
             {options.map((contest) => (
-              // <div
-              //   className=' flex flex-column ' >
-
-              //   <div >
-              //     <img class="block rounded-lg  w-full h-60 object-cover  " src={contest.img} key={contest.id} />;
-              //     <h3 className='text-white text-center p-2'>{contest.musictype}</h3>
-              //   </div>
-
-
-
-
-              // </div>
-
               <Menu.Item>
                 <button onClick={() => filter(contest.musictype)} className='bg-gray-100 text-gray-900 p-3 rounded-lg '  >      {contest.musictype}     </button>
               </Menu.Item>
-
-
-
-
-
             ))}
 
 
