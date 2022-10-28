@@ -223,6 +223,7 @@ element.style{
     background: #1F1F1F!important;
     border-color: #1F1F1F!important;
     width: 50%;
+    
     padding: 5px;
     position: relative;
     border-radius: 20px;
@@ -242,6 +243,10 @@ element.style{
     -webkit-mask-composite: xor;
             mask-composite: exclude; 
   }
+
+
+
+  
 
   .popup-arrow {
     stroke: #1F1F1F!important;
@@ -263,6 +268,7 @@ element.style{
 
   [role="tooltip"].popup-content {
     width: 80%!important;
+    top: 60%!important;
   }
 
   [data-popup="tooltip"].popup-overlay {
@@ -270,8 +276,8 @@ element.style{
   }
 
   #popup-2{
-    top: 40%!important;
-    left: 10%!important;
+    top: 10%!important;
+    left: 100%!important;
   }
 
 #linearBorder{

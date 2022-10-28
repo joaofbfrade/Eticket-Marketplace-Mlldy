@@ -8,6 +8,7 @@ import { useState } from 'react';
 import Timer from '../components/Timer'
 import Dropdown from '../components/Dropdown'
 import ContestList from '../components/ContestList';
+import Awards from '../components/Awards';
 
 
 const showcaseContest = { contesttitle:'Experimental Jazz', contestdescription:'Decide together with the community who is the best rising legend in the experimental jazz.', musictype: 'Jazz', img: 'https://bit.ly/3SiQAhe', id: 1};
@@ -50,6 +51,8 @@ const Contests = () => {
 
 
   return (
+
+    <div>
     <div style={{ "background-color": "#1F1F1F" }}
       className='min-h-screen p-1   sm:p-10  '  >
 
@@ -131,6 +134,9 @@ const Contests = () => {
         </div>
       </div>
 
+    </div>
+
+    <Awards contests={contests}/>
     </div>
   );
 };

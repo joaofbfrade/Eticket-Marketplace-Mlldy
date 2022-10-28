@@ -6,12 +6,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 
 import Popup from 'reactjs-popup';
+
+
 import 'reactjs-popup/dist/index.css';
 
 import Timer from '../components/Timer'
 import GetRewardsPopUp from '../components/GetRewardsPopUp';
+import Awards from '../components/Awards';
 
-import { useState, useRef, useEffect  } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 const IndividualContest = () => {
 
@@ -34,16 +37,16 @@ const IndividualContest = () => {
 
         <div style={{ "background-color": "" }}  >
 
-          <p id="Maintext" style={{ "color": "#b9b9b9"}} 
-              className='text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600
+          <p id="Maintext" style={{ "color": "#b9b9b9" }}
+            className='text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600
                           xl:text-9xl md:mt-20 md:text-7xl
                           sm:pt-4 sm:pb-10
-                          text-5xl'> 
-              {contest.contestname}
+                          text-5xl'>
+            {contest.contestname}
           </p>
 
           <Timer />
-        
+
           <div className="rounded-lg grid grid-cols-4 place-content-center pl-20 pt-8  " ></div>
 
         </div>
@@ -60,13 +63,17 @@ const IndividualContest = () => {
 
           {artists.map((artists) => (
             <div className='2xl:w-80 xl:w-64 md:w-60 sm:w-60 w-48' >
-              <div class="linearBorder center-img" style={{ backgroundColor: artists.id == selectedArtistId ? '#363636' : ''}} onClick={() => setId(artists.id)}>
-                <div className='pt-20 pb-12'>
-                  <img className='' class="profileImg" src={artists.img} key={artists.id} />;
-                </div>
-                <h3 className='text-white text-center p-1'>{artists.artistsname}</h3>
-                <p className='text-white text-center p-1'>{artists.artistsrole}</p>
-              </div>
+
+              <Popup id='popup-content2' trigger={
+                <div class="linearBorder center-img " style={{ backgroundColor: artists.id == selectedArtistId ? '#363636' : '' }} onClick={() => setId(artists.id)}>
+                  <div className='pt-20 pb-12'>
+                    <img className='' class="profileImg" src={artists.img} key={artists.id} />;
+                  </div>
+                  <h3 className='text-white text-center p-1'>{artists.artistsname}</h3>
+                  <p className='text-white text-center p-1'>{artists.artistsrole}</p>
+                </div>}>
+                <Awards artists={artists} />
+              </Popup>
             </div>
           ))}
 
@@ -77,31 +84,30 @@ const IndividualContest = () => {
       </div>
 
       <Popup trigger={
-          <div className='flex justify-center'>
-            <a id='GetRewardsIndividualButton'>
-              <span style={{ "color": "white" }} className='text-center'>
+        <div className='flex justify-center'>
+          <a id='GetRewardsIndividualButton'>
+            <span style={{ "color": "white" }} className='text-center'>
               Claim Rewards
-              </span>
-            </a>
-          </div>
-          }>
-          <GetRewardsPopUp artists={artists} selectedArtistId={selectedArtistId} />
+            </span>
+          </a>
+        </div>}>
+        <GetRewardsPopUp artists={artists} selectedArtistId={selectedArtistId} />
       </Popup>
 
-      <p style={{ "color": "#F3F3F3"}} 
+      <p style={{ "color": "#F3F3F3" }}
         className='text-center font-semibold text-transparent bg-clip-tex
                     xl:text-7xl md:mt-16 md:text-6xl
                     sm:pt-4 sm:pb-4
-                    text-5xl'> 
+                    text-5xl'>
         Voting Rewards
       </p>
 
-      <p style={{ "color": "#b9b9b9"}} 
+      <p style={{ "color": "#b9b9b9" }}
         className='text-center  
                     md:text-2xl
                     text-sm'>
         By voting on your favourite artist both are <br /> winning, unlock new tiers and discover new <br /> exclusive rewards for the participants.
-      </p> 
+      </p>
 
       <div className='rounded-2xl grid place-content-center '>
         <div className='w-96'>
