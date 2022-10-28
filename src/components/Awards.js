@@ -1,11 +1,15 @@
-const Awards = ({artists1}) => {
+import { Image } from "@web3uikit/icons";
 
-    const artists = [
+const Awards = ({artists, selectedArtistId}) => {
+
+    const artists1 = [
         { artistsname: 'Artist1', artistsrole: "Producer", img: 'https://bit.ly/3zqfeWF', id: 10 },
-        { artistsname: 'Artist2', artistsrole: "Producer", img: 'https://bit.ly/3zqfeWF', id: 20 },
-        { artistsname: 'Artist3', artistsrole: "Producer", img: 'https://bit.ly/3zqfeWF', id: 30 },
-        { artistsname: 'Artist4', artistsrole: "Producer", img: 'https://bit.ly/3zqfeWF', id: 40 }
+        { artistsname: 'Artist2', artistsrole: "Producer", img: '', id: 20 },
+        { artistsname: 'Artist3', artistsrole: "Producer", img: '', id: 30 },
+        { artistsname: 'Artist4', artistsrole: "Producer", img: '', id: 40 }
     ];
+
+    let ImageToDisplay;
 
     return (
 
@@ -33,15 +37,25 @@ const Awards = ({artists1}) => {
 
             </div>
             <div className="rounded-2xl grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 p-20">
-                {artists.map((artists) => (
+
+
+
+            {/* {artists.id = 'a'}
+            {selectedArtistId = 'a'}
+            {console.log(selectedArtistId=artists.id)}
+            
+            {artists1.map((artists2) => ( artists.id == selectedArtistId ? ImageToDisplay = artists.img : 'a' ))} */}
+           
+
+                {artists1.map((artists) => (
 
 
                     <div className='2xl:w-80 xl:w-64 md:w-60 sm:w-60 w-48 h-48 ' >
 
 
                         <div class="linearBorder center-img h-48 " >
-                            <div className='mt-10'>
-                                <img className='' class="profileImg" src={artists.img} key={artists.id} />;
+                            <div className='mt-10' key={artists.id}>
+                                <img className='' class="profileImg" src={artists.img}  />;
                             </div>
 
                         

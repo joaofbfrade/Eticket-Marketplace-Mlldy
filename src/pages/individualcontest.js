@@ -16,7 +16,28 @@ import Awards from '../components/Awards';
 
 import { useState, useRef, useEffect } from 'react';
 
+
+
 const IndividualContest = () => {
+ 
+  const [modo, setModo] = useState(false);
+ 
+ 
+
+
+
+  function oC (artis){
+
+    setId(artis);
+    setModo(!modo);
+
+    console.log(modo);
+
+  }
+
+ 
+
+ 
 
   const contest = { contestname: 'Experimental Jazz', contestdescription: '', contesttype: "Alternative", img: 'https://64.media.tumblr.com/e775f7195176c4e70f2654f1d5ff0bfe/tumblr_inline_phvike3zgg1t0myks_500.png', id: 1 };
 
@@ -32,6 +53,13 @@ const IndividualContest = () => {
 
   return (
     <div style={{ "background-color": "#1F1F1F" }} className='min-h-screen p-1 sm:p-10'  >
+      <div className='modo' >
+                  <div className='overlay'>
+                    <div className='modal-content'>
+                      <Awards/>
+                      </div>
+                  </div>
+                 </div>
 
       <div id="maincard" style={{ "background-color": "" }} className="rounded-2xl grid grid-cols-1 place-content-center ml-10 mr-10">
 
@@ -64,16 +92,18 @@ const IndividualContest = () => {
           {artists.map((artists) => (
             <div className='2xl:w-80 xl:w-64 md:w-60 sm:w-60 w-48' >
 
-              <Popup  trigger={
-                <div class="linearBorder center-img" style={{ backgroundColor: artists.id == selectedArtistId ? '#363636' : '' }} onClick={() => setId(artists.id)}>
+             
+                <div class="linearBorder center-img" style={{ backgroundColor: artists.id == selectedArtistId ? '#363636' : '' }} onClick={() => oC(artists.id) }>
+                 
+                 
+                 
                   <div className='pt-20 pb-12'>
                     <img className='' class="profileImg" src={artists.img} key={artists.id} />;
                   </div>
                   <h3 className='text-white text-center p-1'>{artists.artistsname}</h3>
                   <p className='text-white text-center p-1'>{artists.artistsrole}</p>
-                </div>}>
-                <Awards artists={artists} />
-              </Popup>
+                </div>
+               
             </div>
           ))}
 
@@ -116,6 +146,9 @@ const IndividualContest = () => {
       </div>
 
       {/* <GetRewardsPopUp artists={artists} selectedArtistId={selectedArtistId} /> */}
+
+
+      
 
     </div>
   );
