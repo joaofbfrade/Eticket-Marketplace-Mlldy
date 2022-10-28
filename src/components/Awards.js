@@ -1,10 +1,10 @@
 const Awards = ({artists1}) => {
 
     const artists = [
-        { artistsname: 'Artist1', artistsrole: "Producer", img: 'https://64.media.tumblr.com/e775f7195176c4e70f2654f1d5ff0bfe/tumblr_inline_phvike3zgg1t0myks_500.png', id: 10 },
-        { artistsname: 'Artist2', artistsrole: "Producer", img: 'https://cdna.artstation.com/p/assets/images/images/017/787/280/large/annika-soljander-icons2.jpg?1557336279', id: 20 },
-        { artistsname: 'Artist3', artistsrole: "Producer", img: 'https://i.pinimg.com/564x/b3/f7/00/b3f70014d73b6ad9311a0f197976b555.jpg', id: 30 },
-        { artistsname: 'Artist4', artistsrole: "Producer", img: 'https://uploads.scratch.mit.edu/users/avatars/58329667.png', id: 40 }
+        { artistsname: 'Artist1', artistsrole: "Producer", img: 'https://bit.ly/3zqfeWF', id: 10 },
+        { artistsname: 'Artist2', artistsrole: "Producer", img: 'https://bit.ly/3zqfeWF', id: 20 },
+        { artistsname: 'Artist3', artistsrole: "Producer", img: 'https://bit.ly/3zqfeWF', id: 30 },
+        { artistsname: 'Artist4', artistsrole: "Producer", img: 'https://bit.ly/3zqfeWF', id: 40 }
     ];
 
     return (
@@ -36,15 +36,16 @@ const Awards = ({artists1}) => {
                 {artists.map((artists) => (
 
 
-                    <div className='2xl:w-80 xl:w-64 md:w-60 sm:w-60 w-48 ' >
+                    <div className='2xl:w-80 xl:w-64 md:w-60 sm:w-60 w-48 h-48 ' >
 
 
-                        <div class="linearBorder center-img " >
-                            <div className='pt-20 pb-12'>
+                        <div class="linearBorder center-img h-48 " >
+                            <div className='mt-10'>
                                 <img className='' class="profileImg" src={artists.img} key={artists.id} />;
                             </div>
-                            <h3 className='text-white text-center p-1'>{artists.artistsname}</h3>
-                            <p className='text-white text-center p-1'>{artists.artistsrole}</p>
+
+                        
+                            <br/>
                         </div>
                     </div>
 
