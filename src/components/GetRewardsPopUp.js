@@ -63,8 +63,13 @@ const GetRewardsPopUp = ({artists, selectedArtistId}) => {
                             <option value="" selected disabled hidden >
                                 {artists.map((artists) => ( artists.id == selectedArtistId ? nameToDisplay = artists.artistsname : '' ))}
                             </option>
-                            {artists.map((wtv) => <option value={wtv.id}>{wtv.artistsname}</option>)}
+                            {artists.map((wtv) => 
+                            <option value={wtv.id}>
+                                {wtv.artistsname}
+                            </option>)}
                         </select>
+
+                        {console.log(selectedArtistId)}
 
                     </div>
 
