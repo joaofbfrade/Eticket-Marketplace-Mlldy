@@ -76,7 +76,7 @@ const IndividualContest = () => {
 
       </div>
 
-      {/* <Popup trigger={
+      <Popup trigger={
           <div className='flex justify-center'>
             <a id='GetRewardsIndividualButton'>
               <span style={{ "color": "white" }} className='text-center'>
@@ -85,8 +85,8 @@ const IndividualContest = () => {
             </a>
           </div>
           }>
-          <GetRewardsPopUp />
-      </Popup> */}
+          <GetRewardsPopUp artists={artists} selectedArtistId={selectedArtistId} />
+      </Popup>
 
       <p style={{ "color": "#F3F3F3"}} 
         className='text-center font-semibold text-transparent bg-clip-tex
@@ -109,7 +109,7 @@ const IndividualContest = () => {
         </div>
       </div>
 
-      <GetRewardsPopUp artists={artists} selectedArtistId={selectedArtistId} />
+      {/* <GetRewardsPopUp artists={artists} selectedArtistId={selectedArtistId} /> */}
 
     </div>
   );

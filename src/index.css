@@ -256,10 +256,23 @@ element.style{
   .popup-overlay {
     background: #1F1F1F
   }
+
   [data-popup='tooltip'].popup-overlay {
     background: transparent;
   }
 
+  [role="tooltip"].popup-content {
+    width: 80%!important;
+  }
+
+  [data-popup="tooltip"].popup-overlay {
+    background: #000000cf!important;
+  }
+
+  #popup-2{
+    top: 40%!important;
+    left: 10%!important;
+  }
 
 #linearBorder{
 position: relative;
@@ -288,4 +301,8 @@ border-radius: 20px;
     padding: 1px;
     border-radius: 30px;
 
+}
+
+select:focus{
+   outline: none!important;
 }
