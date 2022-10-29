@@ -13,25 +13,29 @@ import 'reactjs-popup/dist/index.css';
 import Timer from '../components/Timer'
 import GetRewardsPopUp from '../components/GetRewardsPopUp';
 import Awards from '../components/Awards';
+import Popupclean from '../components/Popup';
 
 import { useState, useRef, useEffect } from 'react';
 
 
 
-const IndividualContest = () => {
- 
-  const [modo, setModo] = useState(false);
+const IndividualContest = (data) => {
  
  
-
+ 
+ 
+ const [showText, setShowText] = useState(false);
 
 
   function oC (artis){
 
     setId(artis);
-    setModo(!modo);
+    setShowText(true);
+    
 
-    console.log(modo);
+    console.log("pop2 é : " + showText )
+
+    
 
   }
 
@@ -53,13 +57,11 @@ const IndividualContest = () => {
 
   return (
     <div style={{ "background-color": "#1F1F1F" }} className='min-h-screen p-1 sm:p-10'  >
-      <div className='modo' >
-                  <div className='overlay'>
-                    <div className='modal-content'>
-                      <Awards/>
-                      </div>
-                  </div>
-                 </div>
+     
+     
+     {showText ? <Popupclean setShowText={setShowText} {...data} /> : null}
+
+     
 
       <div id="maincard" style={{ "background-color": "" }} className="rounded-2xl grid grid-cols-1 place-content-center ml-10 mr-10">
 
