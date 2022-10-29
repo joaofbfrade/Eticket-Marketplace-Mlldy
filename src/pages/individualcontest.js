@@ -19,29 +19,45 @@ import { useState, useRef, useEffect } from 'react';
 
 
 
+
+
 const IndividualContest = (data) => {
- 
- 
- 
- 
- const [showText, setShowText] = useState(false);
 
 
-  function oC (artis){
+
+
+  const [showText, setShowText] = useState(false);
+  let menuRef = useRef();
+
+  function oC(artis) {
 
     setId(artis);
     setShowText(true);
-    
 
-    console.log("pop2 é : " + showText )
 
-    
+    console.log("pop2 é : " + showText)
 
   }
 
- 
 
- 
+  useEffect(() => {
+
+    let handler = (e) => {
+
+      if (!menuRef.current.contains(e.target)) {
+        setShowText(false);
+        // console.log(setShowText);
+        // console.log(menuRef.current);
+      }
+    }
+
+    document.addEventListener("mousedown", handler);
+
+  });
+
+
+
+
 
   const contest = { contestname: 'Experimental Jazz', contestdescription: '', contesttype: "Alternative", img: 'https://64.media.tumblr.com/e775f7195176c4e70f2654f1d5ff0bfe/tumblr_inline_phvike3zgg1t0myks_500.png', id: 1 };
 
@@ -57,11 +73,12 @@ const IndividualContest = (data) => {
 
   return (
     <div style={{ "background-color": "#1F1F1F" }} className='min-h-screen p-1 sm:p-10'  >
-     
-     
-     {showText ? <Popupclean setShowText={setShowText} {...data} /> : null}
 
-     
+
+
+       {showText ? <div className='AAA'  ref={menuRef} > <Popupclean/> </div> : null} 
+
+
 
       <div id="maincard" style={{ "background-color": "" }} className="rounded-2xl grid grid-cols-1 place-content-center ml-10 mr-10">
 
@@ -94,18 +111,18 @@ const IndividualContest = (data) => {
           {artists.map((artists) => (
             <div className='2xl:w-80 xl:w-64 md:w-60 sm:w-60 w-48' >
 
-             
-                <div class="linearBorder center-img" style={{ backgroundColor: artists.id == selectedArtistId ? '#363636' : '' }} onClick={() => oC(artists.id) }>
-                 
-                 
-                 
-                  <div className='pt-20 pb-12'>
-                    <img className='' class="profileImg" src={artists.img} key={artists.id} />;
-                  </div>
-                  <h3 className='text-white text-center p-1'>{artists.artistsname}</h3>
-                  <p className='text-white text-center p-1'>{artists.artistsrole}</p>
+
+              <div class="linearBorder center-img" style={{ backgroundColor: artists.id == selectedArtistId ? '#363636' : '' }} onClick={() => oC(artists.id)}>
+
+
+
+                <div className='pt-20 pb-12'>
+                  <img className='' class="profileImg" src={artists.img} key={artists.id} />;
                 </div>
-               
+                <h3 className='text-white text-center p-1'>{artists.artistsname}</h3>
+                <p className='text-white text-center p-1'>{artists.artistsrole}</p>
+              </div>
+
             </div>
           ))}
 
@@ -150,7 +167,7 @@ const IndividualContest = (data) => {
       {/* <GetRewardsPopUp artists={artists} selectedArtistId={selectedArtistId} /> */}
 
 
-      
+
 
     </div>
   );

@@ -1,12 +1,12 @@
 import Awards from "./Awards";
 
-const Popupclean = (data) => {
+const Popupclean = () => {
     return (
 
 
 
         <div className='modo' >
-            <div className='overlay' onClick={()=> data.setIsSlider(false)}>
+            <div className='overlay' >
                 <div className='modo-content'>
 
                     <Awards/>
