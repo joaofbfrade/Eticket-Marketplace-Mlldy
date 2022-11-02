@@ -44,7 +44,7 @@ const IndividualContest = (data) => {
 
     let handler = (e) => {
 
-      if (!menuRef.current.contains(e.target)) {
+      if (menuRef.current.contains(e.target)) {
         setShowText(false);
         // console.log(setShowText);
         // console.log(menuRef.current);
