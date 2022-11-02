@@ -8,8 +8,11 @@ import { CryptoCards, Button } from '@web3uikit/core';
 
 
 const Admin = () => {
+
     async function CreateContest() {
-    
+      
+      console.log('a');
+      
         let options = {
           contractAddress: "0x26192DD913F0b6E8E3b2E526Aa8adB9CdFc38CDa",
           functionName: "createContest",
@@ -53,10 +56,7 @@ const Admin = () => {
     }
     return (
 
-
-       
-
-        <Button     onClick={function options(){}}
+        <Button     onClick={() => CreateContest()}
         text="Create Contest"
       />
 
