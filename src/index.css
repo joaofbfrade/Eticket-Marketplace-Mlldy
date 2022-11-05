@@ -344,7 +344,7 @@ body.active-modal {
     font-size: 18px;
 }
 
-.modal, .overlay {
+.modo, .overlay {
     width: 100%;
     height: 100%;
     top: 0;
@@ -352,7 +352,7 @@ body.active-modal {
     right: 0;
     bottom: 0;
     position: fixed;
-    z-index: 100;
+    z-index: 1000;
     
 }
 
@@ -370,6 +370,7 @@ body.active-modal {
     border-radius: 30px;
     width: 80%;
     height: 90%;
+    z-index: 10000;
     
 }
 

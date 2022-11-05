@@ -34,22 +34,12 @@ const IndividualContest = (data) => {
     setId(artis);
     setShowText(true);
     console.log("pop2 é : " + showText)
+    console.log("pop2 é : " + showText)
   }
 
-  useEffect(() => {
+  
 
-    let handler = (e) => {
-
-      if (menuRef.current.contains(e.target)) {
-        setShowText(false);
-        // console.log(setShowText);
-        // console.log(menuRef.current);
-      }
-    }
-
-    document.addEventListener("mousedown", handler);
-
-  });
+  
 
   const contest = { contestname: 'Experimental Jazz', contestdescription: '', contesttype: "Alternative", img: 'https://64.media.tumblr.com/e775f7195176c4e70f2654f1d5ff0bfe/tumblr_inline_phvike3zgg1t0myks_500.png', id: 1 };
 
@@ -70,7 +60,7 @@ const IndividualContest = (data) => {
 
 
 
-       {showText ? <div className='AAA'  ref={menuRef} > <Popupclean/> </div> : null} 
+       {showText ? <div className='AAA'  ref={menuRef} > <Popupclean popChanger={setShowText} /> </div> : null} 
 
 
 
