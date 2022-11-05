@@ -7,7 +7,7 @@ import ArtistsDropdown from './ArtistsDropdown';
 
 
 
-const GetRewardsPopUp = ({artists, selectedArtistId}) => {
+const GetRewardsPopUp = ({artists, selectedArtistId, stateChanger, votedAmountChanger}) => {
 
     const [votedAmount, setVoteAmount] = useState(0);
 
@@ -64,7 +64,7 @@ const GetRewardsPopUp = ({artists, selectedArtistId}) => {
                                 {artists.map((artists) => ( artists.id == selectedArtistId ? nameToDisplay = artists.artistsname : '' ))}
                             </option>
                             {artists.map((wtv) => 
-                            <option value={wtv.id}>
+                            <option value={wtv.id} onClick={() => stateChanger(wtv.id)}>
                                 {wtv.artistsname}
                             </option>)}
                         </select>
@@ -76,7 +76,7 @@ const GetRewardsPopUp = ({artists, selectedArtistId}) => {
                     
                     <div className='inline-flex w-full justify-center md:mt-16 md:mb-10 sm:mt-8 sm:mb-4 '>
                         <input className='mr-4 w-56 rounded-xl border  bg-zinc-800 px-4 py-2 text-sm font-medium text-white shadow-sm ease-in duration-200 hover:bg-zinc-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100'
-                                onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()} onChange={(e)=>{setVoteAmount(e.target.value)}} style={{"zIndex":"2"}}
+                                onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()} onChange={(e)=>{votedAmountChanger(e.target.value)}} style={{"zIndex":"2"}}
                                 placeholder="Enter your amount of MLDY$">
                         </input>
                         <button className='h-14 w-14 rounded-xl border  bg-zinc-800 px-4 py-2 text-sm font-medium text-white shadow-sm ease-in duration-200 hover:bg-zinc-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100' />

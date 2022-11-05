@@ -33,12 +33,8 @@ const IndividualContest = (data) => {
 
     setId(artis);
     setShowText(true);
-
-
     console.log("pop2 é : " + showText)
-
   }
-
 
   useEffect(() => {
 
@@ -55,10 +51,6 @@ const IndividualContest = (data) => {
 
   });
 
-
-
-
-
   const contest = { contestname: 'Experimental Jazz', contestdescription: '', contesttype: "Alternative", img: 'https://64.media.tumblr.com/e775f7195176c4e70f2654f1d5ff0bfe/tumblr_inline_phvike3zgg1t0myks_500.png', id: 1 };
 
   const artists = [
@@ -69,6 +61,8 @@ const IndividualContest = (data) => {
   ];
 
   const [selectedArtistId, setId] = useState(0);
+  const [votedAmount, setVotedAmount] = useState(0);
+
   console.log(selectedArtistId);
 
   return (
@@ -140,7 +134,8 @@ const IndividualContest = (data) => {
             </span>
           </a>
         </div>}>
-        <GetRewardsPopUp artists={artists} selectedArtistId={selectedArtistId} />
+        <GetRewardsPopUp artists={artists} selectedArtistId={selectedArtistId} stateChanger={setId} votedAmountChanger={setVotedAmount} />
+        {console.log({votedAmount})}
       </Popup>
 
       <p style={{ "color": "#F3F3F3" }}
