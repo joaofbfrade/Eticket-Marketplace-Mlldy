@@ -33,8 +33,7 @@ const IndividualContest = (data) => {
 
     setId(artis);
     setShowText(true);
-    console.log("pop2 é : " + showText)
-    console.log("pop2 é : " + showText)
+   
   }
 
   
@@ -60,7 +59,7 @@ const IndividualContest = (data) => {
 
 
 
-       {showText ? <div className='AAA'  ref={menuRef} > <Popupclean popChanger={setShowText} /> </div> : null} 
+       {showText ? <div   ref={menuRef} > <Popupclean popChanger={setShowText} /> </div> : null} 
 
 
 

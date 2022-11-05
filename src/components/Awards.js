@@ -22,7 +22,7 @@ const Awards = ({ artists, selectedArtistId }) => {
 
        
 
-                    <div id='' className='' style={{ "zIndex": "1" }}>
+                    <div id='awards' className='' style={{ "zIndex": "1" }}>
                         <div className='rounded-2xl grid place-content-center '>
 
                             <div>
