@@ -1,8 +1,8 @@
 import Awards from "./Awards";
-import {useRef} from 'react'
+import { useRef } from 'react'
 import GetRewardsPopUp from "./GetRewardsPopUp";
 
-const Popup = ({popChanger,ShowPop ,artists,selectedArtistId}) => {
+const Popup = ({ popChanger, ShowPop, artists, selectedArtistId, stateChanger, votedAmountChanger }) => {
 
     const ref = useRef(null);
 
@@ -10,18 +10,18 @@ const Popup = ({popChanger,ShowPop ,artists,selectedArtistId}) => {
     const rato = event => {
         console.log(event.target.id);
 
-        if(event.target.id == "over"){
+        if (event.target.id == "over") {
             popChanger(false);
             console.log("showpop -> " + ShowPop);
         }
 
-        
-    
-        
-      };
-    
-    
-    
+
+
+
+    };
+
+
+
     return (
 
 
@@ -30,12 +30,13 @@ const Popup = ({popChanger,ShowPop ,artists,selectedArtistId}) => {
             <div className='overlay' id='over' onClick={rato} >
                 <div id='modo-content' >
 
-                {ShowPop =='rewards' ? <Awards/> : null} 
+                    {ShowPop == 'rewards' ? <Awards /> : null}
 
-                {ShowPop =='claim' ? <GetRewardsPopUp artists={artists} selectedArtistId={selectedArtistId}/> : null} 
+                    {ShowPop == 'claim' ? <GetRewardsPopUp artists={artists} selectedArtistId={selectedArtistId} 
+                    stateChanger={stateChanger} votedAmountChanger={votedAmountChanger}/> : null}
 
-                               
-                    
+
+
                 </div>
             </div>
         </div>
