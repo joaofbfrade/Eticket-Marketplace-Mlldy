@@ -1,7 +1,8 @@
 import Awards from "./Awards";
 import {useRef} from 'react'
+import GetRewardsPopUp from "./GetRewardsPopUp";
 
-const Popupclean = ({popChanger}) => {
+const Popup = ({popChanger,ShowPop ,artists,selectedArtistId}) => {
 
     const ref = useRef(null);
 
@@ -11,6 +12,7 @@ const Popupclean = ({popChanger}) => {
 
         if(event.target.id == "over"){
             popChanger(false);
+            console.log("showpop -> " + ShowPop);
         }
 
         
@@ -24,13 +26,15 @@ const Popupclean = ({popChanger}) => {
 
 
 
-        <div className='modo' id='12' >
+        <div className='modo'  >
             <div className='overlay' id='over' onClick={rato} >
                 <div id='modo-content' >
 
-              
-                <Awards/>
-                   
+                {ShowPop =='rewards' ? <Awards/> : null} 
+
+                {ShowPop =='claim' ? <GetRewardsPopUp artists={artists} selectedArtistId={selectedArtistId}/> : null} 
+
+                               
                     
                 </div>
             </div>
@@ -38,4 +42,4 @@ const Popupclean = ({popChanger}) => {
     );
 }
 
-export default Popupclean;
+export default Popup;

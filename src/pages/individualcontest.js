@@ -5,7 +5,7 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 
-import Popup from 'reactjs-popup';
+
 
 
 import 'reactjs-popup/dist/index.css';
@@ -13,7 +13,7 @@ import 'reactjs-popup/dist/index.css';
 import Timer from '../components/Timer'
 import GetRewardsPopUp from '../components/GetRewardsPopUp';
 import Awards from '../components/Awards';
-import Popupclean from '../components/Popup';
+import Popup from '../components/Popup';
 
 import { useState, useRef, useEffect } from 'react';
 
@@ -26,19 +26,23 @@ const IndividualContest = (data) => {
 
 
 
-  const [showText, setShowText] = useState(false);
-  let menuRef = useRef();
+  const [ShowPop, setShowPop] = useState();
 
-  function oC(artis) {
 
-    setId(artis);
-    setShowText(true);
-   
+  function oC(artist) {
+
+    setId(artist);
+    setShowPop('rewards');
+    console.log("showopop -> " + ShowPop)
+
+
   }
 
   
 
-  
+
+
+
 
   const contest = { contestname: 'Experimental Jazz', contestdescription: '', contesttype: "Alternative", img: 'https://64.media.tumblr.com/e775f7195176c4e70f2654f1d5ff0bfe/tumblr_inline_phvike3zgg1t0myks_500.png', id: 1 };
 
@@ -59,7 +63,10 @@ const IndividualContest = (data) => {
 
 
 
-       {showText ? <div   ref={menuRef} > <Popupclean popChanger={setShowText} /> </div> : null} 
+      {ShowPop == 'rewards' ? <div   > <Popup popChanger={setShowPop} ShowPop={ShowPop} /> </div> : null}
+
+
+
 
 
 
@@ -115,17 +122,19 @@ const IndividualContest = (data) => {
 
       </div>
 
-      <Popup trigger={
-        <div className='flex justify-center'>
-          <a id='GetRewardsIndividualButton'>
-            <span style={{ "color": "white" }} className='text-center'>
-              Claim Rewards
-            </span>
-          </a>
-        </div>}>
-        <GetRewardsPopUp artists={artists} selectedArtistId={selectedArtistId} stateChanger={setId} votedAmountChanger={setVotedAmount} />
-        {console.log({votedAmount})}
-      </Popup>
+
+      <div className='flex justify-center' onClick={() => setShowPop('claim')} >
+        <a id='GetRewardsIndividualButton'>
+          <span style={{ "color": "white" }} className='text-center'>
+            Claim Rewards
+          </span>
+        </a>
+      </div>
+      {ShowPop == 'claim' ? <Popup popChanger={setShowPop} ShowPop={ShowPop}  artists={artists} selectedArtistId={selectedArtistId} stateChanger={setId} votedAmountChanger={setVotedAmount} /> : null}
+
+
+      {console.log({ votedAmount })}
+
 
       <p style={{ "color": "#F3F3F3" }}
         className='text-center font-semibold text-transparent bg-clip-tex
