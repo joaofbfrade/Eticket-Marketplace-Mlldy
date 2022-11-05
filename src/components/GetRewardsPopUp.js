@@ -9,7 +9,7 @@ import ArtistsDropdown from './ArtistsDropdown';
 
 const GetRewardsPopUp = ({artists, selectedArtistId, stateChanger, votedAmountChanger}) => {
 
-    const [votedAmount, setVoteAmount] = useState(0);
+    const [votedAmountProgressBar, setVoteAmountProgressBar] = useState(0);
 
 
     // Using state to keep track of what the selected fruit is
@@ -18,7 +18,12 @@ const GetRewardsPopUp = ({artists, selectedArtistId, stateChanger, votedAmountCh
     // Using this function to update the state of fruit
     // whenever a new option is selected from the dropdown
     let handleArtistChange = (e) => {
-        setArtistSelected(e.target.value)
+        setArtistSelected(e.target.value);
+    }
+
+    let handleVotedAmount = (e) => {
+        votedAmountChanger(e.target.value);
+        setVoteAmountProgressBar(e.target.value);
     }
 
     let nameToDisplay;
@@ -46,7 +51,7 @@ const GetRewardsPopUp = ({artists, selectedArtistId, stateChanger, votedAmountCh
                     </p>
 
                     <div className='md:mt-32 mt-12'>
-                        <ProgressBar variant="COLOR" now={votedAmount} max={100000} />;
+                        <ProgressBar variant="COLOR" now={votedAmountProgressBar} max={100000} />;
                     </div>
                     
                     <div className='inline-flex w-full justify-center
@@ -76,7 +81,7 @@ const GetRewardsPopUp = ({artists, selectedArtistId, stateChanger, votedAmountCh
                     
                     <div className='inline-flex w-full justify-center md:mt-16 md:mb-10 sm:mt-8 sm:mb-4 '>
                         <input className='mr-4 w-56 rounded-xl border  bg-zinc-800 px-4 py-2 text-sm font-medium text-white shadow-sm ease-in duration-200 hover:bg-zinc-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100'
-                                onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()} onChange={(e)=>{votedAmountChanger(e.target.value)}} style={{"zIndex":"2"}}
+                                onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()} onChange={handleVotedAmount} style={{"zIndex":"2"}}
                                 placeholder="Enter your amount of MLDY$">
                         </input>
                         <button className='h-14 w-14 rounded-xl border  bg-zinc-800 px-4 py-2 text-sm font-medium text-white shadow-sm ease-in duration-200 hover:bg-zinc-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100' />
