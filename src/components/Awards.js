@@ -45,7 +45,7 @@ const Awards = ({ artists, selectedArtistId }) => {
                             </div>
 
                         </div>
-                        <div className="rounded-2xl grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 p-20">
+                        <div className="rounded-2xl grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 p-20 ">
 
 
 
@@ -59,7 +59,7 @@ const Awards = ({ artists, selectedArtistId }) => {
                             {artists1.map((artists) => (
 
 
-                                <div className='2xl:w-80 xl:w-64 md:w-60 sm:w-60 w-48 h-48 ' >
+                                <div className='2xl:w-80 xl:w-64 md:w-60 sm:w-60 w-48 h-48 p-10 ' >
 
 
                                     <div class="linearBorder center-img h-48 " >
