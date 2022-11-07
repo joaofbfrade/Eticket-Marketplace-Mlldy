@@ -107,9 +107,9 @@ function Navbar1() {
 
               </Nav>
 
-              {/* <div id="butao">
+              <div id="butao">
                 <ConnectButton />
-              </div> */}
+              </div>
 
               <div>
                 <button style={{"color":"white"}} onClick={login}>Moralis Metamask Login</button>
