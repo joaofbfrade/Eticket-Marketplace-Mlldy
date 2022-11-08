@@ -24,15 +24,6 @@ const Contests = () => {
   const options = json;
   const [contests, setcontests] = useState(json);
 
-  // tentativa remover espacos titulos dos individual contest para usar em href
-  const stringifyIndividualTitles = (json) => {
-    return json.map((a) => {
-      const individualContestsTitleHref = json.musictype.replaceAll(' ', '-');
-      console.log(individualContestsTitleHref);
-      return individualContestsTitleHref;
-    });
-  };
-
   const filter2 = () => {
     setcontests(json);
   }
@@ -41,7 +32,6 @@ const Contests = () => {
 
     let newContests = contests.filter(contest => contest.musictype == musictype)
     setcontests(newContests);
-    stringifyIndividualTitles(json);
 
   }
 
