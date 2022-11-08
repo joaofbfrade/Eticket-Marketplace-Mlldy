@@ -22,9 +22,6 @@ const App = () => {
             <Router>
                 <MoralisProvider appId="wlzRrvHDWBuWvZhmBD1zIelwKOuIHHqppirPd3VA" serverUrl="https://s2ni7eolynpx.usemoralis.com:2053/server"> 
                     <Navbar1 />
-                    
-                    
-                
                     <Routes>
                         <Route exact path='/' element={<Welcome />} />
                         <Route exact path='/contests' element={<Contests/>} />
@@ -33,7 +30,6 @@ const App = () => {
                         <Route exact path='/Admin' element={<Admin />} />
                     
                     </Routes>
-
                 </MoralisProvider>
             </Router>
 

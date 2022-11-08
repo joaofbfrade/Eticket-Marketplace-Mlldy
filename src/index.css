@@ -5,9 +5,6 @@
 
 /* Web3 Ui Kit - Connect Button*/
 
-
-
-
 .iVxBbz /*Button Background*/
 {
     background: rgb(241, 241, 241)!important;
@@ -44,7 +41,6 @@ element.style{
 
 }
 
-
 #offcanvasNavbar-expand-md{
 
      background-color: #212529; 
@@ -54,8 +50,6 @@ element.style{
 
     color:aliceblue;
 }
-
-
 
 #Maintext{
     font-style: normal;
@@ -81,7 +75,6 @@ element.style{
     linear-gradient(180deg, #BAF9F8 0%, #E6AAF7 100%);
     border-radius: 30px;
     
-
 }
 
 #module-border-wrap {
@@ -214,10 +207,6 @@ element.style{
     z-index: 1;
 }
 
-
-
-
-
 .popup-content {
     margin: auto;
     background: #1F1F1F!important;
@@ -244,10 +233,6 @@ element.style{
     -webkit-mask-composite: xor;
             mask-composite: exclude; 
   }
-
-
-
-  
 
   .popup-arrow {
     stroke: #1F1F1F!important;
@@ -277,26 +262,6 @@ element.style{
   [data-popup="tooltip"].popup-overlay {
     background: #000000cf!important;
   }
-
-  /* #popup-2{
-    top: 20%!important;
-    left: 10%!important;
-  }
-
-  #popup-4{
-    top: 20%!important;
-    left: 10%!important;
-  }
-
-  #popup-6{
-    top: 20%!important;
-    left: 10%!important;
-  }
-
-  #popup-8{
-    top: 20%!important;
-    left: 10%!important;
-  } */
 
 #linearBorder{
 position: relative;
@@ -354,17 +319,13 @@ body.active-modal {
     position: fixed;
     z-index: 1;
     overflow: hidden;
-    
-    
+ 
 }
-
-
 
 .overlay {
     background: rgba(49,49,49,0.8);
     
 }
-
 
 #modo-content {
     position: absolute;
@@ -378,7 +339,6 @@ body.active-modal {
     width: 80%;
     height: 90%;
     z-index: 10;
-    
     
 }
 
