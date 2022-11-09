@@ -74,7 +74,7 @@ const Contests = () => {
           </div>
 
           {/* FEATURING CARD DIREITA(IMAGEM) */}
-          <a href={"/" + showcaseTitleHref}
+          <a href={"/contests/" + showcaseTitleHref}
             className='flex place-self-center center  w-96 lg:w-8/12  md:p-10 lg:p-0 lg:pt-10 lg:pb-10  '>
             <div id="module-border-wrap" >
               <img id="module" class="w-full h-full " src={showcaseContest.img} />

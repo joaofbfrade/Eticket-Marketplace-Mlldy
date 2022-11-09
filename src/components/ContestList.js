@@ -14,7 +14,7 @@ const ContestList = ({ contests }) => {
 
       {contests.map((contest) => (
 
-        <a href={"/" + individualContestsTitleHref} id="imgcont" class='relative hover:shadow-inner'>
+        <a href={"/contests/" + individualContestsTitleHref} id="imgcont" class='relative hover:shadow-inner'>
           <img id ="img1" class=" rounded-lg  w-full h-60 object-cover" src={contest.img} key={contest.id} />
           <h3 className='absolute  text-white bottom-1 left-1/2 -translate-x-1/2 ' >{contest.musictype}</h3>      
         </a>
