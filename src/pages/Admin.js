@@ -24,7 +24,7 @@ const Admin = () => {
       
         let options = {
           chain: "mumbai",
-          contractAddress: "0x26192DD913F0b6E8E3b2E526Aa8adB9CdFc38CDa",
+          contractAddress: '0x987334A7B1FCdaB2c5938921F59efe060Dc696Bb',
           functionName: "createContest",
           abi: [
             {
@@ -60,11 +60,11 @@ const Admin = () => {
           params: {
             title: "Concurso de Rock Lisboeta",
             endTime: 1761474561,
-            artist_addresses: [0x2ac16289a4c64327d5Eb5F17c70426012bDbCA27,0x01c9706A9C5Ac381c538859B2e905aAf96513F8C],
+            artist_addresses: ['0x2ac16289a4c64327d5Eb5F17c70426012bDbCA27','0x01c9706A9C5Ac381c538859B2e905aAf96513F8C'],
           },
         };
 
-        await contractProcessor.fetch({
+        const res = await contractProcessor.fetch({
           params: options,
           onSuccess: () => {
             console.log("Contest Creation Succesful");
@@ -75,10 +75,11 @@ const Admin = () => {
             setSub(false);
           },
         });
+        console.log("Result: " + res);
     }
     return (
 
-        <Button     onClick={() => CreateContest()}
+        <Button     onClick={async () => await CreateContest()}
         text="Create Contest"
         />
         
