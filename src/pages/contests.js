@@ -19,6 +19,13 @@ const json = [
   { musictype: 'Best PopMusic', img: 'https://bit.ly/3gvVN81', id: 4 }
 ];
 
+const jsonTest = [
+  { contestname: 'Best Indie Rock', contestdescription: '', contesttype: 'Indie Rock', img: 'https://bit.ly/3SiQAhe', id: 1 },
+  { contestname: 'Live Performance', contestdescription: '', contesttype: 'Live Performance', img: 'https://bit.ly/3TrlsNQ', id: 2 },
+  { contestname: 'Best HipHop', contestdescription: '', contesttype: 'HipHop', img: 'https://bit.ly/3F2n5xa', id: 3 },
+  { contestname: 'Best PopMusic', contestdescription: '', contesttype: 'PopMusic', img: 'https://bit.ly/3gvVN81', id: 4 }
+];
+
 const Contests = () => {
 
   const options = json;
