@@ -5,7 +5,7 @@ const ContestList = ({ contests }) => {
   const contestUpdatedArray = contests;
   {contestUpdatedArray.map((contestUpdatedArray) => (
 
-    contestUpdatedArray.musictype = contestUpdatedArray.musictype.replaceAll(' ', '-')
+    contestUpdatedArray.contestname = contestUpdatedArray.contestname.replaceAll(' ', '-')
 
   ))}
 
@@ -18,9 +18,9 @@ const ContestList = ({ contests }) => {
 
       {contests.map((contestUpdatedArray) => (
 
-        <a href={"/contests/" + contestUpdatedArray.musictype} id="imgcont" class='relative hover:shadow-inner'>
+        <a href={"/contests/" + contestUpdatedArray.contestname} id="imgcont" class='relative hover:shadow-inner'>
           <img id ="img1" class=" rounded-lg  w-full h-60 object-cover" src={contestUpdatedArray.img} key={contestUpdatedArray.id} />
-          <h3 className='absolute  text-white bottom-1 left-1/2 -translate-x-1/2 ' >{contestUpdatedArray.musictype}</h3>      
+          <h3 className='absolute  text-white bottom-1 left-1/2 -translate-x-1/2 ' >{contestUpdatedArray.contesttype}</h3>      
         </a>
 
       ))}

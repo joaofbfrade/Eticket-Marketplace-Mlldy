@@ -28,16 +28,16 @@ const jsonTest = [
 
 const Contests = () => {
 
-  const options = json;
-  const [contests, setcontests] = useState(json);
+  const options = jsonTest;
+  const [contests, setcontests] = useState(jsonTest);
 
   const filter2 = () => {
-    setcontests(json);
+    setcontests(jsonTest);
   }
 
-  const filter = (musictype) => {
+  const filter = (contesttype) => {
 
-    let newContests = contests.filter(contest => contest.musictype == musictype)
+    let newContests = contests.filter(contest => contest.contesttype == contesttype)
     setcontests(newContests);
 
   }
