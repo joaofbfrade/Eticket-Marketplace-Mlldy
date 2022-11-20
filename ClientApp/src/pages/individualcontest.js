@@ -29,9 +29,9 @@ const IndividualContest = () => {
    
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch('individualContests');
+            const response = await fetch('individualContests/6');
             const artists = await response.json();
-            //console.log(data);
+            console.log(artists);
             setData(artists);
         }
         fetchData()

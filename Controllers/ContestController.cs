@@ -25,54 +25,55 @@ namespace Mellody.WebApplication.Controllers
             dbClient = new MongoClient(MongoDb.ConnectionString);
 
         }
-        [HttpGet]
-        public IList<MusicType> Get()
-        {
-            List<MusicType> json = new List<MusicType> {
-                new MusicType
-                {
-                    musictype = "Best Indie Rock",
-                    img = "https://bit.ly/3SiQAhe",
-                    id = 1
-                },
-                new MusicType
-                {
-                    musictype = "Live Performance",
-                    img = "https://bit.ly/3TrlsNQ",
-                    id = 2
-                },
-                new MusicType
-                {
-                    musictype = "Best HipHop",
-                    img = "https://bit.ly/3F2n5xa",
-                    id = 3
-                },
-                new MusicType
-                {
-                    musictype = "Best PopMusic",
-                    img = "https://bit.ly/3gvVN81",
-                    id = 4
-                }
-            };
-            
-            return json;
-        }
         //[HttpGet]
-        //public IList<User> Get()
+        //public IList<MusicType> Get()
         //{
-        //    var MellodyDb = dbClient.GetDatabase("mellody");
-        //    var Users = MellodyDb.GetCollection<BsonDocument>("Users");
-        //    var filter = new BsonDocument();
-        //    var artist_data = Users.Find(filter).ToList();
-        //    List<User> users = new List<User> { };
-        //        for(int i = 0; i < artist_data.Count; i++)
-        //    {
-        //        users.Add(new User 
+        //    List<MusicType> json = new List<MusicType> {
+        //        new MusicType
         //        {
-        //            Name = artist_data[i]["UserName"].ToString(),
-        //        });
-        //    }
-        //    return users;
+        //            musictype = "Best Indie Rock",
+        //            img = "https://bit.ly/3SiQAhe",
+        //            id = 1
+        //        },
+        //        new MusicType
+        //        {
+        //            musictype = "Live Performance",
+        //            img = "https://bit.ly/3TrlsNQ",
+        //            id = 2
+        //        },
+        //        new MusicType
+        //        {
+        //            musictype = "Best HipHop",
+        //            img = "https://bit.ly/3F2n5xa",
+        //            id = 3
+        //        },
+        //        new MusicType
+        //        {
+        //            musictype = "Best PopMusic",
+        //            img = "https://bit.ly/3gvVN81",
+        //            id = 4
+        //        }
+        //    };
+
+        //    return json;
         //}
+        [HttpGet]
+        public IList<ContestM> Get()
+        {
+            var MellodyDb = dbClient.GetDatabase("parse");
+            var Users = MellodyDb.GetCollection<BsonDocument>("Contests");
+            var filter = new BsonDocument();
+            var contest_data = Users.Find(filter).ToList();
+            List<ContestM> contests = new List<ContestM> { };
+            for (int i = 0; i < contest_data.Count; i++)
+            {
+                contests.Add(new ContestM
+                {
+                    Title = contest_data[i]["title"].ToString(),
+                    Competitors = new string[] { contest_data[i]["artists_addresses"][0].ToString() }
+                });
+            }
+            return contests;
+        }
     }
 }

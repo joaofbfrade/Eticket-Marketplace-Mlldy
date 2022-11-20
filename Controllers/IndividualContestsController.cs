@@ -25,13 +25,16 @@ namespace Mellody.WebApplication.Controllers
             dbClient = new MongoClient(MongoDb.ConnectionString);
 
         }
-        [HttpGet]
-        public IList<ArtistContest> Get()
+        //[HttpGet]
+        [HttpGet("{id:int:required}")]
+        public IList<ArtistContest> Get(int id)
         {
+
+       
             List<ArtistContest> json = new List<ArtistContest> {
                 new ArtistContest
                 {
-                    artistsname = "Artist1",
+                    artistsname = "Artist"+id,
                     artistsrole = "Producer",
                     img = "https://64.media.tumblr.com/e775f7195176c4e70f2654f1d5ff0bfe/tumblr_inline_phvike3zgg1t0myks_500.png",
                     id = 10

@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using System;
 using WebApplication3.Settings;
 using WebApplication3.Models;
+using Microsoft.Extensions.Options;
 
 namespace Mellody.WebApplication
 {
@@ -24,11 +25,11 @@ namespace Mellody.WebApplication
         public void ConfigureServices(IServiceCollection services)
         {
             //MongoDB connection
-            var mongoDbSettings = Configuration.GetSection(nameof(MongoDbConfig)).Get<MongoDbConfig>();
-            services.AddIdentity<ApplicationUser, ApplicationRole>()
-                .AddMongoDbStores<ApplicationUser, ApplicationRole, Guid>(
-                mongoDbSettings.ConnectionString, mongoDbSettings.Name
-                );
+            services.Configure<MongoDbConfig>(
+                Configuration.GetSection(nameof(MongoDbConfig)));
+
+            services.AddSingleton<MongoDbConfig>(sp =>
+                sp.GetRequiredService<IOptions<MongoDbConfig>>().Value);
 
             services.AddControllersWithViews();
 
@@ -52,15 +53,7 @@ namespace Mellody.WebApplication
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-            app.Use(async (context, next) =>
-            {
-                await next();
-                if (context.Response.StatusCode == 404)
-                {
-                    context.Request.Path = "/contests";
-                    await next();
-                }
-            });
+           
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
