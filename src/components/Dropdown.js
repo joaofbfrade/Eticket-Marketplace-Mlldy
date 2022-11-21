@@ -13,7 +13,7 @@ const Dropdown = ({ contests, filter, options ,filter2 }) => {
 
   return (
     <Menu as="div" className="relative inline-block text-left">
-      <div onClick={() => filter2(contests.musictype)} >
+      <div onClick={() => filter2(contests.contestname)} >
         <Menu.Button className="inline-flex w-full justify-center rounded-md border  bg-zinc-800 px-4 py-2 text-sm font-medium text-white shadow-sm ease-in duration-200 hover:bg-zinc-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100">
           <button  className='  '  >      Music Types     </button>
 
@@ -37,7 +37,7 @@ const Dropdown = ({ contests, filter, options ,filter2 }) => {
 
             {options.map((contest) => (
               <Menu.Item>
-                <button onClick={() => filter(contest.musictype)} className='bg-gray-100 text-gray-900 p-3 rounded-lg '  >      {contest.musictype}     </button>
+                <button onClick={() => filter(contest.contestname)} className='bg-gray-100 text-gray-900 p-3 rounded-lg '  >      {contest.contestname}     </button>
               </Menu.Item>
             ))}
 
