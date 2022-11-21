@@ -23,11 +23,7 @@ import { useState, useRef, useEffect } from 'react';
 
 const IndividualContest = (data) => {
 
-
-
-
   const [ShowPop, setShowPop] = useState();
-
 
   function oC(artist) {
 
@@ -37,12 +33,6 @@ const IndividualContest = (data) => {
 
 
   }
-
-  
-
-
-
-
 
   const contest = { contestname: 'Experimental Jazz', contestdescription: '', contesttype: "Alternative", img: 'https://64.media.tumblr.com/e775f7195176c4e70f2654f1d5ff0bfe/tumblr_inline_phvike3zgg1t0myks_500.png', id: 1 };
 
@@ -61,14 +51,7 @@ const IndividualContest = (data) => {
   return (
     <div style={{ "background-color": "#1F1F1F" }} className='min-h-screen p-1 sm:p-10'  >
 
-
-
       {ShowPop == 'rewards' ? <div   > <Popup popChanger={setShowPop} ShowPop={ShowPop} /> </div> : null}
-
-
-
-
-
 
       <div id="maincard" style={{ "background-color": "" }} className="rounded-2xl grid grid-cols-1 place-content-center ml-10 mr-10">
 
@@ -84,7 +67,7 @@ const IndividualContest = (data) => {
 
           <Timer />
 
-          <div className="rounded-lg grid grid-cols-4 place-content-center pl-20 pt-8  " ></div>
+          <div className="rounded-lg grid grid-cols-4 place-content-center pl-20 pt-8 " ></div>
 
         </div>
 
@@ -92,7 +75,7 @@ const IndividualContest = (data) => {
 
       <br />
 
-      <div id="maincard" style={{ "background-color": "#222222" }} className="rounded-2xl grid place-content-center md:mr-24 md:ml-24 mr-12 ml-12 mb-16  ">
+      <div id="maincard" style={{ "background-color": "#222222" }} className="rounded-2xl grid place-content-center md:mr-24 md:ml-24 mr-12 ml-12 mb-16 ">
 
         <h3 style={{ "color": "#F3F3F3" }} className='text-LEFT pt-4 pb-3'> Contest Artists</h3>
 
@@ -122,7 +105,6 @@ const IndividualContest = (data) => {
 
       </div>
 
-
       <div className='flex justify-center' onClick={() => setShowPop('claim')} >
         <a id='GetRewardsIndividualButton'>
           <span style={{ "color": "white" }} className='text-center'>
@@ -132,9 +114,7 @@ const IndividualContest = (data) => {
       </div>
       {ShowPop == 'claim' ? <Popup popChanger={setShowPop} ShowPop={ShowPop}  artists={artists} selectedArtistId={selectedArtistId} stateChanger={setId} votedAmountChanger={setVotedAmount} /> : null}
 
-
       {console.log({ votedAmount })}
-
 
       <p style={{ "color": "#F3F3F3" }}
         className='text-center font-semibold text-transparent bg-clip-tex
@@ -158,9 +138,6 @@ const IndividualContest = (data) => {
       </div>
 
       {/* <GetRewardsPopUp artists={artists} selectedArtistId={selectedArtistId} /> */}
-
-
-
 
     </div>
   );

@@ -1,19 +1,29 @@
-import React, { useState, useEffect } from "react";
 
 import { Tag, Widget, Blockie, Tooltip, Icon, Form, Table } from '@web3uikit/web3';
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router";
-import { useMoralis, useWeb3ExecuteFunction } from "react-moralis";
+import { useState, useRef, useEffect  } from 'react';
+
+import { useMoralis, useMoralisWeb3Api, useWeb3ExecuteFunction } from "react-moralis";
 import { CryptoCards, Button } from '@web3uikit/core';
 
 
 const Admin = () => {
 
+    const { Moralis, isInitialized } = useMoralis();
+    const [sub, setSub] = useState();
+    const contractProcessor = useWeb3ExecuteFunction();
+    const Web3Api = useMoralisWeb3Api()
+    
+
     async function CreateContest() {
-      
+
+      const web3Provider = await Moralis.enableWeb3();
+
       console.log('a');
       
         let options = {
+          chain: "mumbai",
           contractAddress: "0x26192DD913F0b6E8E3b2E526Aa8adB9CdFc38CDa",
           functionName: "createContest",
           abi: [
@@ -53,12 +63,27 @@ const Admin = () => {
             artist_addresses: [0x2ac16289a4c64327d5Eb5F17c70426012bDbCA27,0x01c9706A9C5Ac381c538859B2e905aAf96513F8C],
           },
         };
+
+        await contractProcessor.fetch({
+          params: options,
+          onSuccess: () => {
+            console.log("Contest Creation Succesful");
+            setSub(false);
+          },
+          onError: (error) => {
+            alert(error);
+            setSub(false);
+          },
+        });
     }
     return (
 
         <Button     onClick={() => CreateContest()}
         text="Create Contest"
-      />
+        />
+        
+
+      
 
       );
 }
