@@ -35,9 +35,9 @@ const Contests = () => {
     setcontests(jsonTest);
   }
 
-  const filter = (contesttype) => {
+  const filter = (contestname) => {
 
-    let newContests = contests.filter(contest => contest.contesttype == contesttype)
+    let newContests = contests.filter(contest => contest.contestname == contestname)
     setcontests(newContests);
 
   }
