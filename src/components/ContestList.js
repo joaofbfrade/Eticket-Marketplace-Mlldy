@@ -12,8 +12,8 @@ const ContestList = ({ contests,filter,options }) => {
 
       {contests.map((contest) => (
 
-        <div id="imgcont" className='relative  duration-300  hover:scale-110 ease-in  hover:shadow-inner ' >
-          <img id ="img1" className=" rounded-lg  w-full h-60 object-cover    " src={contest.img} key={contest.id} />
+        <div id="imgcont" className='relative      ' >
+          <img key={contest.id} id ="img1" className=" rounded-lg  w-full h-60 object-cover    " src={contest.img}  />
           <h3 className='absolute  text-white bottom-1 left-1/2 -translate-x-1/2 ' >{contest.musictype}</h3>      
         </div>
 
