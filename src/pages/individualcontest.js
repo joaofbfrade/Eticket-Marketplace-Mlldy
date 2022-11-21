@@ -49,13 +49,13 @@ const IndividualContest = (data) => {
   console.log(selectedArtistId);
 
   return (
-    <div style={{ "background-color": "#1F1F1F" }} className='min-h-screen p-1 sm:p-10'  >
+    <div style={{ "backgroundColor": "#1F1F1F" }} className='min-h-screen p-1 sm:p-10'  >
 
       {ShowPop == 'rewards' ? <div   > <Popup popChanger={setShowPop} ShowPop={ShowPop} /> </div> : null}
 
-      <div id="maincard" style={{ "background-color": "" }} className="rounded-2xl grid grid-cols-1 place-content-center ml-10 mr-10">
+      <div id="maincard" style={{ "backgroundColor": "" }} className="rounded-2xl grid grid-cols-1 place-content-center ml-10 mr-10">
 
-        <div style={{ "background-color": "" }}  >
+        <div style={{ "backgroundColor": "" }}  >
 
           <p id="Maintext" style={{ "color": "#b9b9b9" }}
             className='text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600
@@ -75,7 +75,7 @@ const IndividualContest = (data) => {
 
       <br />
 
-      <div id="maincard" style={{ "background-color": "#222222" }} className="rounded-2xl grid place-content-center md:mr-24 md:ml-24 mr-12 ml-12 mb-16 ">
+      <div id="maincard" style={{ "BackgroundColor": "#222222" }} className="rounded-2xl grid place-content-center md:mr-24 md:ml-24 mr-12 ml-12 mb-16 ">
 
         <h3 style={{ "color": "#F3F3F3" }} className='text-LEFT pt-4 pb-3'> Contest Artists</h3>
 
@@ -85,12 +85,12 @@ const IndividualContest = (data) => {
             <div className='2xl:w-80 xl:w-64 md:w-60 sm:w-60 w-48' >
 
 
-              <div class="linearBorder center-img" style={{ backgroundColor: artists.id == selectedArtistId ? '#363636' : '' }} onClick={() => oC(artists.id)}>
+              <div className="linearBorder center-img" style={{ backgroundColor: artists.id == selectedArtistId ? '#363636' : '' }} onClick={() => oC(artists.id)}>
 
 
 
                 <div className='pt-20 pb-12'>
-                  <img className='' class="profileImg" src={artists.img} key={artists.id} />;
+                  <img  className="profileImg" src={artists.img} key={artists.id} />;
                 </div>
                 <h3 className='text-white text-center p-1'>{artists.artistsname}</h3>
                 <p className='text-white text-center p-1'>{artists.artistsrole}</p>

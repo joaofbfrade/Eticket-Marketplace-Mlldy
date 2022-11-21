@@ -45,11 +45,11 @@ const Contests = () => {
   return (
 
     <div>
-      <div style={{ "background-color": "#1F1F1F" }}
+      <div style={{ "backgroundColor": "#1F1F1F" }}
         className='min-h-screen p-1   sm:p-10  '  >
 
         {/* FEATURING CARD */}
-        <div style={{ "background-color": "#222222" }}
+        <div style={{ "backgroundColor": "#222222" }}
           className="rounded-2xl grid grid-cols-1 lg:grid-cols-2 place-content-center mt-10  sm:m-10    ">
 
           {/* FEATURING CARD ESQUERDA */}
@@ -69,10 +69,10 @@ const Contests = () => {
             <div
               className="flex justify-center gap-4 p-10 lg:p-1" >
 
-              <div style={{ "background-color": "#ffffff" }} class=" h-10 w-10  rounded-full " > </div>
-              <div style={{ "background-color": "#ffffff" }} class="h-10 w-10  rounded-full" > </div>
-              <div style={{ "background-color": "#ffffff" }} class="h-10 w-10  rounded-full" ></div>
-              <div style={{ "background-color": "#ffffff" }} class="h-10 w-10  rounded-full" > </div>
+              <div style={{ "backgroundColor": "#ffffff" }} className=" h-10 w-10  rounded-full " > </div>
+              <div style={{ "backgroundColor": "#ffffff" }} className="h-10 w-10  rounded-full" > </div>
+              <div style={{ "backgroundColor": "#ffffff" }} className="h-10 w-10  rounded-full" ></div>
+              <div style={{ "backgroundColor": "#ffffff" }} className="h-10 w-10  rounded-full" > </div>
 
             </div>
 
@@ -84,19 +84,19 @@ const Contests = () => {
           <a href={"/contests/" + showcaseTitleHref}
             className='flex place-self-center center  w-96 lg:w-8/12  md:p-10 lg:p-0 lg:pt-10 lg:pb-10  '>
             <div id="module-border-wrap" >
-              <img id="module" class="w-full h-full " src={showcaseContest.img} />
+              <img id="module" className="w-full h-full " src={showcaseContest.img} />
             </div>
           </a>
         </div>
 
         <br />
         <div className='flex flex-col   items-center '>
-          <img class=" -z-10 sm:z-0  w-20 animate-bounce " src={mouse} />;
+          <img className=" -z-10 sm:z-0  w-20 animate-bounce " src={mouse} />;
         </div>
         <br />
 
         {/* TOP CONTESTS */}
-        <div class>
+        <div >
           <div >
             <div className=' p-10 float-right '><Dropdown contests={contests} filter={filter} filter2={filter2} options={options} /></div>
             <h1 style={{ "color": "#b9b9b9" }} className='text-LEFT p-10'> Top Contests</h1>

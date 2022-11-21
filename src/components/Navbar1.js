@@ -17,7 +17,7 @@ import { useState, useRef, useEffect  } from 'react';
 import logo from '../assets/LogoDark.png';
 
 const imgstyle = {
-  'padding-left': 5,
+  'paddingLeft': 5,
 };
 
 const expand = 'md';
