@@ -136,7 +136,7 @@ const Contests = () => {
 
     </div>
 
-    <Awards contests={contests}/>
+    
     </div>
   );
 };
