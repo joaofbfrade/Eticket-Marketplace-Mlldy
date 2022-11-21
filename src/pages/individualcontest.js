@@ -82,7 +82,7 @@ const IndividualContest = (data) => {
         <div className="rounded-2xl grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
 
           {artists.map((artists) => (
-            <div className='2xl:w-80 xl:w-64 md:w-60 sm:w-60 w-48' >
+            <div className='2xl:w-80 xl:w-64 md:w-60 sm:w-60 w-48' key={artists.id} >
 
 
               <div className="linearBorder center-img" style={{ backgroundColor: artists.id == selectedArtistId ? '#363636' : '' }} onClick={() => oC(artists.id)}>
@@ -90,7 +90,7 @@ const IndividualContest = (data) => {
 
 
                 <div className='pt-20 pb-12'>
-                  <img  className="profileImg" src={artists.img} key={artists.id} />;
+                  <img  className="profileImg" src={artists.img}  />;
                 </div>
                 <h3 className='text-white text-center p-1'>{artists.artistsname}</h3>
                 <p className='text-white text-center p-1'>{artists.artistsrole}</p>

@@ -8,7 +8,7 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import { ConnectButton } from '@web3uikit/web3';
 
 const imgstyle = {
-    'padding-left': 20,
+    'paddingLeft': 20,
   };
   
   const expand = 'md';
