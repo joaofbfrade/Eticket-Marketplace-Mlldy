@@ -1,6 +1,6 @@
 import { Form } from '@web3uikit/core';
 import { useState } from 'react';
-import { findAllInRenderedTree } from 'react-dom/test-utils/index.js';
+//import { findAllInRenderedTree } from 'react-dom/test-utils/index.js';
 
 import { useMoralis, useMoralisWeb3Api, useWeb3ExecuteFunction } from "react-moralis";
 import {abiCreateContest, abiLaunchContest,abiEndContest } from "./blockchain/abis.js";
@@ -24,13 +24,13 @@ const Admin = () => {
       var endDate = Date(document.getElementById("CreateContestForm").children[2].children[0].children[0].value);
       var endTime = Math.floor(new Date(endDate).getTime() / 1000);
 
-      alert("endTime: " + endTime);
+//      alert("endTime: " + endTime);
 
-      var artists_addresses = document.getElementById("CreateContestForm").children[3].children[0].children[0].value;
+      var artists_addresses = document.getElementById("CreateContestForm").children[3].children[0].children[0].value.split(",");
 
-      alert("artists_addresses: " + artists_addresses);
+  //    alert("!! artists_addresses: " + artists_addresses);
 
-      alert("calling CreateContest: " + title, endTime, artists_addresses);
+//      alert("calling CreateContest: " + title, endTime, artists_addresses);
 
 
       let options = {
@@ -144,7 +144,7 @@ const Admin = () => {
                 inputWidth: '100%',
                 name: 'Artists Addresses',
                 type: 'text',
-                value: "['0x2ac16289a4c64327d5Eb5F17c70426012bDbCA27','0x01c9706A9C5Ac381c538859B2e905aAf96513F8C']"
+                value: "0x2ac16289a4c64327d5Eb5F17c70426012bDbCA27,0x01c9706A9C5Ac381c538859B2e905aAf96513F8C"
               }
     ]}
   onSubmit={async () => await CreateContest()}
