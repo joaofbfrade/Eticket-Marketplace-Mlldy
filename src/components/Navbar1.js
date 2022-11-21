@@ -111,10 +111,10 @@ function Navbar1() {
                 <ConnectButton />
               </div>
 
-              <div>
+              {/* <div>
                 <button style={{"color":"white"}} onClick={login}>Moralis Metamask Login</button>
                 <button style={{"color":"white"}} onClick={logOut} disabled={isAuthenticating}>Logout</button>
-              </div>
+              </div> */}
 
 
             </Offcanvas.Body>

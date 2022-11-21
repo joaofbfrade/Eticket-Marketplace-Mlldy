@@ -5,9 +5,6 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 
-
-
-
 import 'reactjs-popup/dist/index.css';
 
 import Timer from '../components/Timer'
@@ -16,7 +13,6 @@ import Awards from '../components/Awards';
 import Popup from '../components/Popup';
 
 import { useState, useRef, useEffect } from 'react';
-
 
 
 
@@ -30,8 +26,6 @@ const IndividualContest = (data) => {
     setId(artist);
     setShowPop('rewards');
     console.log("showopop -> " + ShowPop)
-
-
   }
 
   const contest = { contestname: 'Experimental Jazz', contestdescription: '', contesttype: "Alternative", img: 'https://64.media.tumblr.com/e775f7195176c4e70f2654f1d5ff0bfe/tumblr_inline_phvike3zgg1t0myks_500.png', id: 1 };
