@@ -28,14 +28,16 @@ const Popup = ({ popChanger, ShowPop, artists, selectedArtistId, stateChanger, v
 
         <div className='modo'  >
             <div className='overlay' id='over' onClick={rato} >
-                <div id='modo-content' >
 
-                    {ShowPop == 'rewards' ? <Awards /> : null}
+                
+                    <div id='modo-content' >
 
-                    {ShowPop == 'claim' ? <GetRewardsPopUp artists={artists} selectedArtistId={selectedArtistId} 
-                    stateChanger={stateChanger} votedAmountChanger={votedAmountChanger}/> : null}
+                        {ShowPop == 'rewards' ? <Awards /> : null}
 
+                        {ShowPop == 'claim' ? <GetRewardsPopUp artists={artists} selectedArtistId={selectedArtistId}
+                            stateChanger={stateChanger} votedAmountChanger={votedAmountChanger} /> : null}
 
+                   
 
                 </div>
             </div>
