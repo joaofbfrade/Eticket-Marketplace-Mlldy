@@ -84,7 +84,7 @@ const GetRewardsPopUp = ({artists, selectedArtistId, stateChanger, votedAmountCh
                                 onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()} onChange={handleVotedAmount} style={{"zIndex":"2"}}
                                 placeholder="Enter your amount of MLDY$">
                         </input>
-                        <button className='h-14 w-14 rounded-xl border  bg-zinc-800 px-4 py-2 text-sm font-medium text-white shadow-sm ease-in duration-200 hover:bg-zinc-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100' />
+                        <button id='buttonborder' className='h-14 w-14 rounded-xl border  bg-zinc-800  text-sm font-medium text-white shadow-sm ease-in duration-200 hover:bg-zinc-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100' />
                     </div>
                 
 
