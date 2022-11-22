@@ -1,4 +1,4 @@
-﻿using Mellody.WebApplication.Models;
+﻿
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Bson;
@@ -18,13 +18,13 @@ namespace Mellody.WebApplication.Controllers
     [Route("[controller]")]
     public class IndividualContestsController : ControllerBase
     {
-        private MongoClient dbClient;
-        public IndividualContestsController(IConfiguration configuration)
-        {
-            var MongoDb = configuration.GetSection(nameof(MongoDbConfig)).Get<MongoDbConfig>();
-            dbClient = new MongoClient(MongoDb.ConnectionString);
+        //private MongoClient dbClient;
+        //public IndividualContestsController(IConfiguration configuration)
+        //{
+        //    var MongoDb = configuration.GetSection(nameof(MongoDbConfig)).Get<MongoDbConfig>();
+        //    dbClient = new MongoClient(MongoDb.ConnectionString);
 
-        }
+        //}
         //[HttpGet]
         [HttpGet("{id:int:required}")]
         public IList<ArtistContest> Get(int id)

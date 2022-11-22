@@ -25,14 +25,14 @@ const IndividualContest = () => {
   //];
 
     const [selectedArtistId, setId] = useState(0);
-    const [artists, setData] = useState([]);
+    const [data, setData] = useState([]);
    
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch('individualContests/6');
-            const artists = await response.json();
-            console.log(artists);
-            setData(artists);
+            const data = await response.json();
+            console.log(data);
+            setData(data);
         }
         fetchData()
             .catch(console.error);;
