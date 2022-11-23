@@ -7,17 +7,51 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { ConnectButton } from '@web3uikit/web3';
 
+import { MoralisProvider } from "react-moralis";
+import { useMoralis } from "react-moralis";
+
+import { useState, useRef, useEffect  } from 'react';
+
 
 
 import logo from '../assets/LogoDark.png';
 
 const imgstyle = {
-  'padding-left': 5,
+  'paddingLeft': 5,
 };
 
 const expand = 'md';
 
 function Navbar1() {
+
+  const { authenticate, isAuthenticated, isAuthenticating, user, account, logout } = useMoralis();
+
+    useEffect(() => {
+        if (isAuthenticated) {
+        // add your logic here
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [isAuthenticated]);
+
+    const login = async () => {
+      if (!isAuthenticated) {
+
+        await authenticate({signingMessage: "Log in using Moralis" })
+          .then(function (user) {
+            console.log("logged in user:", user);
+            console.log(!user.get("ethAddress"));
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      }
+    }
+
+    const logOut = async () => {
+      await logout();
+      console.log("logged out");
+    }
+
   return (
     <>
 
@@ -76,6 +110,12 @@ function Navbar1() {
               <div id="butao">
                 <ConnectButton />
               </div>
+
+              {/* <div>
+                <button style={{"color":"white"}} onClick={login}>Moralis Metamask Login</button>
+                <button style={{"color":"white"}} onClick={logOut} disabled={isAuthenticating}>Logout</button>
+              </div> */}
+
 
             </Offcanvas.Body>
           </Navbar.Offcanvas>
