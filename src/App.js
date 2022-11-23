@@ -12,6 +12,7 @@ import Welcome from './pages/welcome';
 import Contests from './pages/contests';
 import Admin from './pages/Admin';
 
+import IpfsTest from './pages/ipfsTest';
 import IndividualContest from './pages/individualcontest';
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
                         <Route exact path='/' element={<Welcome />} />
                         <Route exact path='/contests' element={<Contests/>} />
                         {/* <Route exact path='/marketplace' element={<Marketplace/>} /> */}
+                        <Route exact path='/ipfsTest' element={<IpfsTest/>} />
                         <Route exact path='/individualcontest' element={<IndividualContest/>} />
                         <Route exact path='/Admin' element={<Admin />} />
                     
