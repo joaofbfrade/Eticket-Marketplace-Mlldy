@@ -27,7 +27,7 @@ const App = () => {
                         <Route exact path='/' element={<Welcome />} />
                         <Route exact path='/contests' element={<Contests/>} />
                         {/* <Route exact path='/marketplace' element={<Marketplace/>} /> */}
-                        <Route exact path='/ipfsTest' element={<IpfsTest/>} />
+                        {/* <Route exact path='/ipfsTest' element={<IpfsTest/>} /> */}
                         <Route exact path='/individualcontest' element={<IndividualContest/>} />
                         <Route exact path='/Admin' element={<Admin />} />
                     
