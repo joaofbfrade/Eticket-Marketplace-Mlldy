@@ -14,7 +14,7 @@ const projectSecret = '8dc91d1411ed953ce10996b62c535927';
 const authorization = "Basic " + btoa(projectId + ":" + projectSecret);
 
 
-const IpfsTest = () => {
+const IpfsUploader = () => {
 
     const [images, setImages] = React.useState<{ cid: CID; path: string }[]>([]);
 
@@ -104,4 +104,4 @@ const IpfsTest = () => {
   
 }
  
-export default IpfsTest;
+export default IpfsUploader;

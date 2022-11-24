@@ -5,6 +5,8 @@ import { useState } from 'react';
 import { useMoralis, useMoralisWeb3Api, useWeb3ExecuteFunction } from "react-moralis";
 import {abiCreateContest, abiLaunchContest,abiEndContest } from "./blockchain/abis.js";
 
+import Ipfs from '../components/IpfsUploader';
+
 
 const Admin = () => {
 
@@ -119,6 +121,7 @@ const Admin = () => {
 }
     
     return (
+      // <div style={{ "backgroundColor": "#1F1F1F", "color":"white"}}>
       <div>
         <Form
             id ="CreateContestForm"
@@ -146,9 +149,9 @@ const Admin = () => {
                 type: 'text',
                 value: "0x2ac16289a4c64327d5Eb5F17c70426012bDbCA27,0x01c9706A9C5Ac381c538859B2e905aAf96513F8C"
               }
-    ]}
-  onSubmit={async () => await CreateContest()}
-  title="Create Contest"
+          ]}
+        onSubmit={async () => await CreateContest()}
+        title="Create Contest"
         />
 
         <Form
@@ -186,6 +189,9 @@ const Admin = () => {
           onSubmit={async () => await EndContest()}
           title="End Contest"
         />
+
+        <Ipfs />
+
       </div>
         );
 }
