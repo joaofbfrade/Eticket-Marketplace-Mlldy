@@ -6,8 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
-using WebApplication3.Settings;
-using WebApplication3.Models;
+using Mellody.WebApplication.Settings;
+using Mellody.WebApplication.Models;
 using Microsoft.Extensions.Options;
 
 namespace Mellody.WebApplication
@@ -25,8 +25,14 @@ namespace Mellody.WebApplication
         public void ConfigureServices(IServiceCollection services)
         {
             //MongoDB connection
+            services.Configure<MoralisDbConfig>(
+                Configuration.GetSection(nameof(MoralisDbConfig)));
+
+            services.AddSingleton<MoralisDbConfig>(sp =>
+                sp.GetRequiredService<IOptions<MoralisDbConfig>>().Value);
+            //
             services.Configure<MongoDbConfig>(
-                Configuration.GetSection(nameof(MongoDbConfig)));
+         Configuration.GetSection(nameof(MongoDbConfig)));
 
             services.AddSingleton<MongoDbConfig>(sp =>
                 sp.GetRequiredService<IOptions<MongoDbConfig>>().Value);
@@ -64,7 +70,7 @@ namespace Mellody.WebApplication
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller}/{action=Index}/{id?}");
+                    pattern: "{controller}/{id?}");
             });
 
             app.UseSpa(spa =>

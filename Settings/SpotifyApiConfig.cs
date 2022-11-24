@@ -1,5 +1,5 @@
 ﻿
-namespace WebApplication3.Settings
+namespace Mellody.WebApplication.Settings
 {
     public class SpotifyApiConfig
     {

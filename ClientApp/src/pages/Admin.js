@@ -1,5 +1,5 @@
 import { Form } from '@web3uikit/core';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 //import { findAllInRenderedTree } from 'react-dom/test-utils/index.js';
 
 import { useMoralis, useMoralisWeb3Api, useWeb3ExecuteFunction } from "react-moralis";
@@ -14,6 +14,17 @@ const Admin = () => {
     const Web3Api = useMoralisWeb3Api();
 
     const contractAddress = '0xd88B9206D3eeE0200D090Bea671fD084827042a9';
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await fetch('artist');
+            const contests = await response.json();
+            console.log(contests);
+            /* setcontests(contests);*/
+        }
+        fetchData()
+            .catch(console.error);;
+
+    }, [])
 
     async function CreateContest() {
 
@@ -45,7 +56,7 @@ const Admin = () => {
         },
       };
 
-      const res = contractProcessor.fetch({
+      const res = await contractProcessor.fetch({
         params: options,
         onSuccess: () => {
           console.log("Contest Creation Succesful");
@@ -56,7 +67,8 @@ const Admin = () => {
           setSub(false);
         },
       });
-      console.log("Result: " + JSON.stringify(res));
+        console.log("Result: " + JSON.stringify(res));
+        await CreateContestBackend(res);
     }
     
     async function LaunchContest() {
@@ -116,7 +128,51 @@ const Admin = () => {
         },
       });
       console.log("Result: " + JSON.stringify(res));
-}
+    }
+    async function CreateContestBackend(res) {
+        var type = document.getElementById("CreateContestForm").children[4].children[0].children[0].value
+        var description = document.getElementById("CreateContestForm").children[5].children[0].children[0].value
+        const fetchData = async () => {
+            const response = await fetch('contest', {
+                method: 'POST',
+                headers: { 'Content-type': 'application/json' },
+                body: JSON.stringify({
+                    musictype: type,
+                    description: description,
+                    hash: res["hash"]
+                })
+
+            });
+            //const data = await response.json();
+            //console.log(data);
+        }
+        fetchData()
+            .catch(console.error);;
+
+    }
+    async function CreateArtist() {
+
+        var name = document.getElementById("CreateArtist").children[1].children[0].children[0].value
+        var role = document.getElementById("CreateArtist").children[2].children[0].children[0].value
+        var wallet = document.getElementById("CreateArtist").children[3].children[0].children[0].value
+        const fetchData = async () => {
+            const response = await fetch('artist', {
+                method: 'POST',
+                headers: { 'Content-type': 'application/json' },
+                body: JSON.stringify({
+                    artistsname: name,
+                    artistsrole: role,
+                    wallet_address: wallet
+                })
+
+            });
+            //const data = await response.json();
+            //console.log(data);
+        }
+        fetchData()
+            .catch(console.error);;
+
+    }
     
     return (
       <div>
@@ -145,7 +201,20 @@ const Admin = () => {
                 name: 'Artists Addresses',
                 type: 'text',
                 value: "0x2ac16289a4c64327d5Eb5F17c70426012bDbCA27,0x01c9706A9C5Ac381c538859B2e905aAf96513F8C"
-              }
+                },
+                {
+                    id: "MusicType",
+                    inputWidth: '30%',
+                    name: 'Music Type',
+                    type: 'text',
+                    value: ''
+                },
+                {
+                    inputWidth: '30%',
+                    name: 'Description',
+                    type: 'text',
+                    value: ''
+                }         
     ]}
   onSubmit={async () => await CreateContest()}
   title="Create Contest"
@@ -185,7 +254,55 @@ const Admin = () => {
             ]}
           onSubmit={async () => await EndContest()}
           title="End Contest"
-        />
+            />
+            
+
+        <Form
+            id ="endContestForm"
+            buttonConfig={{
+            onClick: async () => await EndContest(),
+            theme: 'primary'
+            }}
+            data={[
+              {
+                inputWidth: '30%',
+                name: 'Contest Id',
+                type: 'number',
+                value: ''
+              }
+            ]}
+          onSubmit={async () => await EndContest()}
+          title="End Contest"
+            />
+            <Form
+                id="CreateArtist"
+                buttonConfig={{
+                    onClick: async () => await CreateArtist(),
+                    theme: 'primary'
+                }}
+                data={[
+                    {
+                        inputWidth: '30%',
+                        name: 'Name',
+                        type: 'text',
+                        value: ''
+                    },
+                    {
+                        inputWidth: '30%',
+                        name: 'Role',
+                        type: 'text',
+                        value: ''
+                    },
+                    {
+                        inputWidth: '30%',
+                        name: 'Wallet',
+                        type: 'text',
+                        value: ''
+                    }
+                ]}
+                onSubmit={async () => await CreateArtist()}
+                title="Create Artist"
+            />
       </div>
         );
 }

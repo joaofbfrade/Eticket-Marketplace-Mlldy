@@ -8,9 +8,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
-using WebApplication3.Settings;
-using WebApplication3.Models;
+using Mellody.WebApplication.Settings;
+using Mellody.WebApplication.Models;
 using Swan.Formatters;
+using System.Threading.Tasks;
 
 namespace Mellody.WebApplication.Controllers
 {
@@ -18,62 +19,64 @@ namespace Mellody.WebApplication.Controllers
     [Route("[controller]")]
     public class ContestController : ControllerBase
     {
-        private MongoClient dbClient;
+        private MongoClient dbClientMoralis;
+        private MongoClient dbClientAtlas;
         public ContestController(IConfiguration configuration)
         {
-            var MongoDb = configuration.GetSection(nameof(MongoDbConfig)).Get<MongoDbConfig>();
-            dbClient = new MongoClient(MongoDb.ConnectionString);
+            var MoralisDb = configuration.GetSection(nameof(MoralisDbConfig)).Get<MoralisDbConfig>();
+            dbClientMoralis = new MongoClient(MoralisDb.ConnectionString);
+
+            var AtlasDb = configuration.GetSection(nameof(MongoDbConfig)).Get<MongoDbConfig>();
+            dbClientAtlas = new MongoClient(AtlasDb.ConnectionString);
 
         }
-        //[HttpGet]
-        //public IList<MusicType> Get()
-        //{
-        //    List<MusicType> json = new List<MusicType> {
-        //        new MusicType
-        //        {
-        //            musictype = "Best Indie Rock",
-        //            img = "https://bit.ly/3SiQAhe",
-        //            id = 1
-        //        },
-        //        new MusicType
-        //        {
-        //            musictype = "Live Performance",
-        //            img = "https://bit.ly/3TrlsNQ",
-        //            id = 2
-        //        },
-        //        new MusicType
-        //        {
-        //            musictype = "Best HipHop",
-        //            img = "https://bit.ly/3F2n5xa",
-        //            id = 3
-        //        },
-        //        new MusicType
-        //        {
-        //            musictype = "Best PopMusic",
-        //            img = "https://bit.ly/3gvVN81",
-        //            id = 4
-        //        }
-        //    };
+        //MORALIS DB
 
-        //    return json;
+        //[HttpGet]
+        //public IList<ContestMoralis> Get()
+        //{
+        //    var MoralisDb = dbClientMoralis.GetDatabase("parse");
+        //    var Contests = MoralisDb.GetCollection<BsonDocument>("Contests");
+        //    var filter = new BsonDocument();
+        //    var contest_data = Contests.Find(filter).ToList();
+        //    List<ContestMoralis> contests = new List<ContestMoralis> { };
+        //    for (int i = 0; i < contest_data.Count; i++)
+        //    {
+        //        contests.Add(new ContestMoralis
+        //        {
+        //            Title = contest_data[i]["title"].ToString(),
+        //            Competitors = new string[] { contest_data[i]["artists_addresses"][0].ToString() }
+        //        });
+        //    }
+        //    return contests;
         //}
+        // ATLAS DB
         [HttpGet]
-        public IList<ContestM> Get()
+        public IList<ContestAtlas> Get()
         {
-            var MellodyDb = dbClient.GetDatabase("parse");
-            var Users = MellodyDb.GetCollection<BsonDocument>("Contests");
+            var MellodyDb = dbClientAtlas.GetDatabase("mellodyDB");
+            var Contests = MellodyDb.GetCollection<BsonDocument>("Contests");
             var filter = new BsonDocument();
-            var contest_data = Users.Find(filter).ToList();
-            List<ContestM> contests = new List<ContestM> { };
-            for (int i = 0; i < contest_data.Count; i++)
+            var contests_data = Contests.Find(filter).ToList();
+            List<ContestAtlas> contests = new List<ContestAtlas> { };
+            for (int i = 0; i < contests_data.Count; i++)
             {
-                contests.Add(new ContestM
+                contests.Add(new ContestAtlas
                 {
-                    Title = contest_data[i]["title"].ToString(),
-                    Competitors = new string[] { contest_data[i]["artists_addresses"][0].ToString() }
+                    musictype = contests_data[i]["musictype"].ToString(),
+                    description = contests_data[i]["description"].ToString(),
+                    hash = contests_data[i]["hash"].ToString()
                 });
             }
             return contests;
+        }
+            [HttpPost]
+        public async Task Post([FromBody] ContestAtlas contest)
+        {
+            var AtlasDb = dbClientAtlas.GetDatabase("mellodyDB");
+            var Contests = AtlasDb.GetCollection<ContestAtlas>("Contests");
+            await Contests.InsertOneAsync(contest);
+
         }
     }
 }
