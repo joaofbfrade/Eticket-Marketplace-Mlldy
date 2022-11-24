@@ -43,7 +43,7 @@ const IndividualContest = (data) => {
     console.log(id);
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch('https://localhost:44370/individualContests/'+id );
+            const response = await fetch('https://localhost:5001/individualContests/'+id );
             const artists = await response.json();
             console.log(artists);
             setcontests(artists);

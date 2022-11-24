@@ -3002,10 +3002,10 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@*":
-  "integrity" "sha512-y+nlX0h87U0R+wsGn6EBuoRWYyv3KFtwRNP3QWp9+k2tJ2/bqcGS3UxD7jgT+tiwJWWq3UsyV4Y+T6rsMT4XMg=="
-  "resolved" "https://registry.npmjs.org/@types/jest/-/jest-29.1.2.tgz"
-  "version" "29.1.2"
+"@types/jest@*", "@types/jest@^29.2.3":
+  "integrity" "sha512-6XwoEbmatfyoCjWRX7z0fKMmgYKe9+/HrviJ5k0X/tjJWHGAezZOfYaxqQKuzG/TvQyr+ktjm4jgbk0s4/oF2w=="
+  "resolved" "https://registry.npmjs.org/@types/jest/-/jest-29.2.3.tgz"
+  "version" "29.2.3"
   dependencies:
     "expect" "^29.0.0"
     "pretty-format" "^29.0.0"
@@ -3025,10 +3025,10 @@
   "resolved" "https://registry.npmjs.org/@types/mime/-/mime-3.0.1.tgz"
   "version" "3.0.1"
 
-"@types/node@*":
-  "integrity" "sha512-IOXCvVRToe7e0ny7HpT/X9Rb2RYtElG1a+VshjwT00HxrM2dWBApHQoqsI6WiY7Q03vdf2bCrIGzVrkF/5t10w=="
-  "resolved" "https://registry.npmjs.org/@types/node/-/node-18.11.0.tgz"
-  "version" "18.11.0"
+"@types/node@*", "@types/node@^18.11.9":
+  "integrity" "sha512-CRpX21/kGdzjOpFsZSkcrXMGIBWMGNIHXXBVFSH+ggkftxg+XYP20TESbh+zFvFj3EQOl5byk0HTRn1IL6hbqg=="
+  "resolved" "https://registry.npmjs.org/@types/node/-/node-18.11.9.tgz"
+  "version" "18.11.9"
 
 "@types/node@^12.12.54":
   "integrity" "sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ=="
@@ -3077,10 +3077,10 @@
   "resolved" "https://registry.npmjs.org/@types/range-parser/-/range-parser-1.2.4.tgz"
   "version" "1.2.4"
 
-"@types/react-dom@^18.0.0":
-  "integrity" "sha512-/5OFZgfIPSwy+YuIBP/FgJnQnsxhZhjjrnxudMddeblOouIodEQ75X14Rr4wGSG/bknL+Omy9iWlLo1u/9GzAA=="
-  "resolved" "https://registry.npmjs.org/@types/react-dom/-/react-dom-18.0.6.tgz"
-  "version" "18.0.6"
+"@types/react-dom@^18.0.0", "@types/react-dom@^18.0.9":
+  "integrity" "sha512-qnVvHxASt/H7i+XG1U1xMiY5t+IHcPGUK7TDMDzom08xa7e86eCeKOiLZezwCKVxJn6NEiiy2ekgX8aQssjIKg=="
+  "resolved" "https://registry.npmjs.org/@types/react-dom/-/react-dom-18.0.9.tgz"
+  "version" "18.0.9"
   dependencies:
     "@types/react" "*"
 
@@ -3091,10 +3091,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@>=16.14.8", "@types/react@>=16.9.11":
-  "integrity" "sha512-7QUCOxvFgnD5Jk8ZKlUAhVcRj7GuJRjnjjiY/IUBWKgOlnvDvTMLD4RTF7NPyVmbRhNrbomZiOepg7M/2Kj1mA=="
-  "resolved" "https://registry.npmjs.org/@types/react/-/react-18.0.21.tgz"
-  "version" "18.0.21"
+"@types/react@*", "@types/react@^18.0.25", "@types/react@>=16.14.8", "@types/react@>=16.9.11":
+  "integrity" "sha512-xD6c0KDT4m7n9uD4ZHi02lzskaiqcBxf4zi+tXZY98a04wvc0hi/TcCPC2FOESZi51Nd7tlUeOJY8RofL799/g=="
+  "resolved" "https://registry.npmjs.org/@types/react/-/react-18.0.25.tgz"
+  "version" "18.0.25"
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -12626,10 +12626,10 @@
   dependencies:
     "is-typedarray" "^1.0.0"
 
-"typescript@^3.2.1 || ^4", "typescript@>= 2.7", "typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta":
-  "integrity" "sha512-QCh+85mCy+h0IGff8r5XWzOVSbBO+KfeYrMQh7NJ58QujwcE22u+NUSmUxqF+un70P9GXKxa2HCNiTTMJknyjQ=="
-  "resolved" "https://registry.npmjs.org/typescript/-/typescript-4.8.4.tgz"
-  "version" "4.8.4"
+"typescript@^3.2.1 || ^4", "typescript@^4.9.3", "typescript@>= 2.7", "typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta":
+  "integrity" "sha512-CIfGzTelbKNEnLpLdGFgdyKhG23CKdKgQPOBc+OUNrkJ2vr+KSzsSV5kq5iWhEQbok+quxgGzrAtGWCyU7tHnA=="
+  "resolved" "https://registry.npmjs.org/typescript/-/typescript-4.9.3.tgz"
+  "version" "4.9.3"
 
 "unbox-primitive@^1.0.2":
   "integrity" "sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw=="
