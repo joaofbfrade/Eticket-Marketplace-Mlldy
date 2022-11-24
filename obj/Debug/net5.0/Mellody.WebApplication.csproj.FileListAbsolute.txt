@@ -370,3 +370,5 @@ C:\Users\pedro\Desktop\Projectos\React\Mellody-app\mellody\obj\Debug\net5.0\refi
 C:\Users\pedro\Desktop\Projectos\React\Mellody-app\mellody\obj\Debug\net5.0\Mellody.WebApplication.pdb
 C:\Users\pedro\Desktop\Projectos\React\Mellody-app\mellody\obj\Debug\net5.0\Mellody.WebApplication.genruntimeconfig.cache
 C:\Users\pedro\Desktop\Projectos\React\Mellody-app\mellody\obj\Debug\net5.0\ref\Mellody.WebApplication.dll
+C:\Users\pedro\Desktop\Projectos\React\Mellody-app\mellody\bin\Debug\net5.0\package-lock.json
+C:\Users\pedro\Desktop\Projectos\React\Mellody-app\mellody\bin\Debug\net5.0\package.json
