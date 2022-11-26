@@ -12,7 +12,7 @@ const ContestList = ({ contests,filter,options }) => {
 
           {contests.map((contest) => (
               <button onClick={() => { location.href = 'individualcontest/' + contest.hash }}>
-              <div id="imgcont" className='relative'  key={contest.id} >
+              <div id="imgcont" className='relative'  key={contest.hash} >
                  
           <img  id ="img1" className=" rounded-lg  w-full h-60 object-cover    " src={contest.img}  />
           <h3 className='absolute  text-white bottom-1 left-1/2 -translate-x-1/2 ' >{contest.musictype} </h3>      

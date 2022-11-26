@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lDlPjE3QNiD45LUKAo7PaB0kIR5BXYofROJH8bgmDEAtgLP9MaIxWp+sQkTfDAW099AvSgDg6oCXewNvQS6swg==",
+  "dgSpecHash": "ckyWVTokNPiTs3lANWENllO2Z12msLRBd0HBNX9GIXk6Ml9finBqUIu8tOqTn6fPQnJvBqF7KZY2+Z0zQH4TkQ==",
   "success": true,
-  "projectFilePath": "C:\\projects\\mellody_mvp1\\pedrov2\\Mellody.WebApplication.csproj",
+  "projectFilePath": "C:\\projects\\mellody_mvp1\\Mellody.WebApplication.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\CEX\\.nuget\\packages\\aspnetcore.identity.mongodbcore\\3.1.2\\aspnetcore.identity.mongodbcore.3.1.2.nupkg.sha512",
     "C:\\Users\\CEX\\.nuget\\packages\\dnsclient\\1.4.0\\dnsclient.1.4.0.nupkg.sha512",
