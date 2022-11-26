@@ -19,11 +19,19 @@ namespace Mellody.WebApplication.Controllers
     public class ArtistController : ControllerBase
     {
         private MongoClient dbClient;
+        private SpotifyClient _spotifyClient;
         public ArtistController(IConfiguration configuration)
         {
             
             var AtlasDb = configuration.GetSection(nameof(MongoDbConfig)).Get<MongoDbConfig>();
             dbClient = new MongoClient(AtlasDb.ConnectionString);
+
+            var SpotifyApi = configuration.GetSection(nameof(SpotifyApiConfig)).Get<SpotifyApiConfig>();
+            var config = SpotifyClientConfig
+                .CreateDefault()
+                .WithAuthenticator(new ClientCredentialsAuthenticator(SpotifyApi.CLIENT_ID, SpotifyApi.CLIENT_SECRET_ID));
+
+            _spotifyClient = new SpotifyClient(config);
 
         }
         [HttpGet]
@@ -39,18 +47,29 @@ namespace Mellody.WebApplication.Controllers
                 artists.Add(new Artist
                 {
                     artistsname = artists_data[i]["artistsname"].ToString(),
-                    artistsrole = artists_data[i]["artistsrole"].ToString(),
-                    wallet_address = artists_data[i]["wallet_address"].ToString()
+                    wallet_address = artists_data[i]["wallet_address"].ToString(),
+                    img = artists_data[i]["img"].ToString()
                 });
             }
             return artists;
         }
         [HttpPost]
-        public async Task Post([FromBody] Artist employee)
+        public async Task Post([FromBody] Artist artist)
         {
+            
+            var artistSpotify = await _spotifyClient.Artists.Get(artist.id_spotify);
+            var artistBd = new Artist
+            {
+                artistsname = artistSpotify.Name,
+                img = artistSpotify.Images[0].Url,
+                wallet_address = artist.wallet_address,
+                id_spotify = artist.id_spotify
+
+            };
             var MellodyDb = dbClient.GetDatabase("mellodyDB");
             var Artists = MellodyDb.GetCollection<Artist>("Artists");
-            await Artists.InsertOneAsync(employee);
+            await Artists.InsertOneAsync(artistBd);
+           
 
         }
     }

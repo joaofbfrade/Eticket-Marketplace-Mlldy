@@ -139,12 +139,11 @@ const Admin = () => {
                 body: JSON.stringify({
                     musictype: type,
                     description: description,
-                    hash: res["hash"]
+                    hash: res["hash"],
+                    img: "https://ipfs.io/ipfs/QmepiP8xaM514VNeezm67jAzrTsZwpeZTNTaYmKLj52EcB"
                 })
 
             });
-            //const data = await response.json();
-            //console.log(data);
         }
         fetchData()
             .catch(console.error);;
@@ -152,22 +151,37 @@ const Admin = () => {
     }
     async function CreateArtist() {
 
-        var name = document.getElementById("CreateArtist").children[1].children[0].children[0].value
-        var role = document.getElementById("CreateArtist").children[2].children[0].children[0].value
-        var wallet = document.getElementById("CreateArtist").children[3].children[0].children[0].value
+        var id_spotify = document.getElementById("CreateArtist").children[1].children[0].children[0].value
+        var wallet = document.getElementById("CreateArtist").children[2].children[0].children[0].value
         const fetchData = async () => {
             const response = await fetch('artist', {
                 method: 'POST',
                 headers: { 'Content-type': 'application/json' },
                 body: JSON.stringify({
-                    artistsname: name,
-                    artistsrole: role,
+                    id_spotify: id_spotify,
                     wallet_address: wallet
                 })
 
             });
-            //const data = await response.json();
-            //console.log(data);
+        }
+        fetchData()
+            .catch(console.error);;
+
+    }
+    async function CreateUser() {
+
+        var name = document.getElementById("CreateUser").children[1].children[0].children[0].value
+        var wallet = document.getElementById("CreateUser").children[2].children[0].children[0].value
+        const fetchData = async () => {
+            const response = await fetch('user', {
+                method: 'POST',
+                headers: { 'Content-type': 'application/json' },
+                body: JSON.stringify({
+                    name: name,
+                    wallet_address: wallet
+                })
+
+            });
         }
         fetchData()
             .catch(console.error);;
@@ -256,24 +270,6 @@ const Admin = () => {
           title="End Contest"
             />
             
-
-        <Form
-            id ="endContestForm"
-            buttonConfig={{
-            onClick: async () => await EndContest(),
-            theme: 'primary'
-            }}
-            data={[
-              {
-                inputWidth: '30%',
-                name: 'Contest Id',
-                type: 'number',
-                value: ''
-              }
-            ]}
-          onSubmit={async () => await EndContest()}
-          title="End Contest"
-            />
             <Form
                 id="CreateArtist"
                 buttonConfig={{
@@ -283,13 +279,7 @@ const Admin = () => {
                 data={[
                     {
                         inputWidth: '30%',
-                        name: 'Name',
-                        type: 'text',
-                        value: ''
-                    },
-                    {
-                        inputWidth: '30%',
-                        name: 'Role',
+                        name: 'Id_Spotify',
                         type: 'text',
                         value: ''
                     },
@@ -303,6 +293,29 @@ const Admin = () => {
                 onSubmit={async () => await CreateArtist()}
                 title="Create Artist"
             />
+            {/*<Form*/}
+            {/*    id="CreateUser"*/}
+            {/*    buttonConfig={{*/}
+            {/*        onClick: async () => await CreateUser(),*/}
+            {/*        theme: 'primary'*/}
+            {/*    }}*/}
+            {/*    data={[*/}
+            {/*        {*/}
+            {/*            inputWidth: '30%',*/}
+            {/*            name: 'Name',*/}
+            {/*            type: 'text',*/}
+            {/*            value: ''*/}
+            {/*        },*/}
+            {/*        {*/}
+            {/*            inputWidth: '30%',*/}
+            {/*            name: 'Wallet',*/}
+            {/*            type: 'text',*/}
+            {/*            value: ''*/}
+            {/*        }*/}
+            {/*    ]}*/}
+            {/*    onSubmit={async () => await CreateUser()}*/}
+            {/*    title="Create User"*/}
+            {/*/>*/}
       </div>
         );
 }

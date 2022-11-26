@@ -65,7 +65,9 @@ namespace Mellody.WebApplication.Controllers
                 {
                     musictype = contests_data[i]["musictype"].ToString(),
                     description = contests_data[i]["description"].ToString(),
-                    hash = contests_data[i]["hash"].ToString()
+                    hash = contests_data[i]["hash"].ToString(),
+                    img = contests_data[i]["img"].ToString(),
+                    
                 });
             }
             return contests;

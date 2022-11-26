@@ -22,12 +22,13 @@ import { useParams } from "react-router-dom";
 const IndividualContest = (data) => {
 
     const [ShowPop, setShowPop] = useState();
+   
 
   function oC(artist) {
 
-    setId(artist);
+   setId(artist);
     setShowPop('rewards');
-    console.log("showopop -> " + ShowPop)
+   /* console.log("showopop -> " + ShowPop)*/
   }
 
   const contest = { contestname: 'Experimental Jazz', contestdescription: '', contesttype: "Alternative", img: 'https://64.media.tumblr.com/e775f7195176c4e70f2654f1d5ff0bfe/tumblr_inline_phvike3zgg1t0myks_500.png', id: 1 };
@@ -38,15 +39,15 @@ const IndividualContest = (data) => {
   //  { artistsname: 'Artist3', artistsrole: "Producer", img: 'https://i.pinimg.com/564x/b3/f7/00/b3f70014d73b6ad9311a0f197976b555.jpg', id: 30 },
   //  { artistsname: 'Artist4', artistsrole: "Producer", img: 'https://uploads.scratch.mit.edu/users/avatars/58329667.png', id: 40 }
   //  ];
-    const [artists, setcontests] = useState([]);
+    const [artists, setartists] = useState([]);
     let { id } = useParams();
-    console.log(id);
+   /* console.log(id);*/
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch('https://localhost:5001/individualContests/'+id );
+            const response = await fetch('https://localhost:44370/individualContests/'+id );
             const artists = await response.json();
             console.log(artists);
-            setcontests(artists);
+            setartists(artists);
         }
         fetchData()
             .catch(console.error);;
@@ -55,7 +56,7 @@ const IndividualContest = (data) => {
  
 
 
-  const [selectedArtistId, setId] = useState(0);
+    const [selectedArtistId, setId] = useState(0);
   const [votedAmount, setVotedAmount] = useState(0);
 
   console.log(selectedArtistId);

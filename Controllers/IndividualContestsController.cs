@@ -18,58 +18,34 @@ namespace Mellody.WebApplication.Controllers
     [Route("[controller]")]
     public class IndividualContestsController : ControllerBase
     {
-        //private MongoClient dbClient;
-        //public IndividualContestsController(IConfiguration configuration)
-        //{
-        //    var MongoDb = configuration.GetSection(nameof(MongoDbConfig)).Get<MongoDbConfig>();
-        //    dbClient = new MongoClient(MongoDb.ConnectionString);
+        private MongoClient dbClient;
+        public IndividualContestsController(IConfiguration configuration)
+        {
+            var MongoDb = configuration.GetSection(nameof(MongoDbConfig)).Get<MongoDbConfig>();
+            dbClient = new MongoClient(MongoDb.ConnectionString);
 
-        //}
+        }
         //[HttpGet]
-        
+
         [HttpGet("{id}")]
         public IList<Artist> Get(string id)
         {
-
-       
-            List<Artist> json = new List<Artist> {
-                new Artist
+            var MellodyDb = dbClient.GetDatabase("mellodyDB");
+            var Artists = MellodyDb.GetCollection<BsonDocument>("Artists");
+            var filter = new BsonDocument();
+            var artists_data = Artists.Find(filter).ToList();
+            List<Artist> artists = new List<Artist> { };
+            for (int i = 0; i < artists_data.Count; i++)
+            {
+                artists.Add(new Artist
                 {
-                    artistsname = "Artist"+id,
-                    artistsrole = "Producer",
-                    img = "https://64.media.tumblr.com/e775f7195176c4e70f2654f1d5ff0bfe/tumblr_inline_phvike3zgg1t0myks_500.png",
-                    id = 10
-             
-                },
-                new Artist
-                {
-                    artistsname = "Artist2",
-                    artistsrole = "Producer",
-                    img = "https://cdna.artstation.com/p/assets/images/images/017/787/280/large/annika-soljander-icons2.jpg?1557336279",
-                    id = 20
-              
-                },
-                new Artist
-                {
-                    artistsname = "Artist3",
-                    artistsrole = "Producer",
-                    img = "https://i.pinimg.com/564x/b3/f7/00/b3f70014d73b6ad9311a0f197976b555.jpg",
-                    id=30
-                  
-                },
-                new Artist
-                {
-                    artistsname = "Artist4",
-                    artistsrole = "Producer",
-                    img = "https://uploads.scratch.mit.edu/users/avatars/58329667.png",
-                    id = 40
-         
-                },
-                
-            };
-
-            return json;
+                    artistsname = artists_data[i]["artistsname"].ToString(),
+                    wallet_address = artists_data[i]["wallet_address"].ToString(),
+                    img = artists_data[i]["img"].ToString()
+                });
+            }
+            return artists;
         }
-    
+
     }
 }
